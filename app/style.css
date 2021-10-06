@@ -1,0 +1,8 @@
+#derecha {text-align : right}
+#izquierda {text-align : left}
+#centro {text-align: center}
+
+#body {background-color: #5f9ea0 }
+t { color : #57483E; font-size: 75; font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;}
+t.c { color : #887162; font-size: 65; font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif}
+n { color : #57483E; font-size: 20; font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif }
