@@ -1,10 +1,10 @@
 
 
 function comprobarDatos(nombre, apellidos, mail, contraseña, dni, telefono,fecha){
-  //comprobarDNI(dni);
-  //comprobarNombreApellidos(nombre, apellidos);
-  //comprobarMail(mail);
-  //comprobarTelefono(telefono);
+  comprobarDNI(dni);
+  comprobarNombreApellidos(nombre, apellidos);
+  comprobarMail(mail);
+  comprobarTelefono(telefono);
   comprobarFecha(fecha);
 }
 function comprobarFecha(fecha){
@@ -26,12 +26,14 @@ function comprobarFecha(fecha){
 }
 
 function comprobarTelefono(telefono){
-  alert(!isNaN(telefono.value)&&telefono.value>=111111111&&telefono.value<=999999999)
+
+  alert("telefono: "+!isNaN(telefono.value)&&telefono.value>=111111111&&telefono.value<=999999999)
+
 
 }
 
 function comprobarNombreApellidos(nombre, apellidos){
-   alert(/\d/.test(nombre.value) &&  /\d/.test(apellidos.value)); //se mira si hay un digito ("\d") en el nombre o en al apellido en cuyo la comprobacion fallará
+   alert('nombre y apellidos: ' + /\d/.test(nombre.value) &&  /\d/.test(apellidos.value)); //se mira si hay un digito ("\d") en el nombre o en al apellido en cuyo caso la comprobacion fallará
 }
 
 function comprobarMail(mail){
@@ -41,11 +43,11 @@ function comprobarMail(mail){
   nServidor=mailArray[1].split(".")[0]
   extension=mailArray[1].split(".")[1]
     if ((typeof nMail === 'string') && (typeof nServidor === 'string') && (typeof extension === 'string')){ //comprobamos que todo sea tipo texto
-      alert("mail correecto")
+      alert("mail correcto")
       return true
     }
   }
-  alert("mail incorreecto")
+  alert("mail incorrecto")
   return false
 
 }
