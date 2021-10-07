@@ -1,16 +1,26 @@
 <?php
+  echo '<html lang="en">';
+
+  echo '<link rel="stylesheet" type="text/css" href="style.css">';
+  echo '
+  <div id="cajita">
+      <a href="registro.html">Registro</a>
+
+  ';
   echo '<h1>Yeah, it works!<h1>';
 
   // phpinfo();
   $hostname = "db";
-  $username = "root";
-  $password = "";
+  $username = "admin";
+  $password = "test";
   $db = "database";
 
   $conn = mysqli_connect($hostname,$username,$password,$db);
   if ($conn->connect_error) {
     die("Database connection failed: " . $conn->connect_error);
   }
+
+
 
 
 
@@ -23,9 +33,11 @@ while ($row = mysqli_fetch_array($query)) {
     <td>{$row['id']}</td>
     <td>{$row['nombre']}</td>
     <td>asdasd</td><br>
-   </tr>";
+   </tr>
+   ";
 
 
 }
+echo'</div>'
 
 ?>
