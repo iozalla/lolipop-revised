@@ -17,9 +17,10 @@
 
 
  //https://phpdelusions.net/mysqli_examples/insert
-$sql = "INSERT INTO users (name, email, password) VALUES (?,?,?)";
+ echo $nombre;
+$sql = "INSERT INTO usuarios (nombre,apellidos, mail, contrasena) VALUES (?,?,?); ";
 $stmt= $conn->prepare($sql);
-$stmt->bind_param("sss", $name, $email, $password);
+$stmt->bind_param("sss", $fnombre, $fmail, $fcontrasena);
 $stmt->execute();
 
 while ($row = mysqli_fetch_array($query)) {
