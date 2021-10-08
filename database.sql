@@ -62,7 +62,7 @@ INSERT INTO `usuarios` (`mail`,`contrasena`, `nombre`, `apellidos`, `DNI`, `sexo
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`mail`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
