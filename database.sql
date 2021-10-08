@@ -28,11 +28,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
+
+  `mail` text NOT NULL,
+  `contrasena` text NOT NULL,
   `nombre` text NOT NULL,
   `apellidos`text NOT NULL,
-  `mail` text NOT NULL,
-  `DNI` text(9),
+  `DNI` text(10),
   `sexo` text,
   `sexualidad` text,
   `edad` int,
@@ -45,11 +46,11 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `mail`, `nombre`, `apellidos`, `DNI`, `sexo`, `sexualidad`, `edad`, `gustos`, `altura`, `peso` ) VALUES
-(1, 'micha@gmail.com','Michael', 'Homar', '38285783Y', 'nb', 'sexualidad', 75, 'pelota', 1.75, 135),
-(2, 'chris@gmail.com','Christopher', 'Adolphus', '49933148X', 'n', 'sexualidad', 55, 'pelota', 1.75, 80),
-(3, 'jess@hdo.com','Jessica', 'Ammon', '13551093E', 'n', 'sexualidad', 26, 'pelota', 1.75, 56),
-(4, 'mattorchard@gmail.es','Matthew', 'Dawon', '61075806L', 'nb', 'sexualidad', 43, 'pelota', 1.75, 120);
+INSERT INTO `usuarios` (`mail`,`contrasena`, `nombre`, `apellidos`, `DNI`, `sexo`, `sexualidad`, `edad`, `gustos`, `altura`, `peso` ) VALUES
+('micha@gmail.com','Michael', 'Homar', '38285783Y', 'nb', 'sexualidad', 75, 'pelota', 1.75, 135),
+('chris@gmail.com','Christopher', 'Adolphus', '49933148X', 'n', 'sexualidad', 55, 'pelota', 1.75, 80),
+('jess@hdo.com','Jessica', 'Ammon', '13551093E', 'n', 'sexualidad', 26, 'pelota', 1.75, 56),
+('mattorchard@gmail.es','Matthew', 'Dawon', '61075806L', 'nb', 'sexualidad', 43, 'pelota', 1.75, 120);
 
 
 

@@ -18,9 +18,9 @@
 
  //https://phpdelusions.net/mysqli_examples/insert
  echo $nombre;
-$sql = "INSERT INTO usuarios (nombre,apellidos, mail, contrasena) VALUES (?,?,?); ";
+$sql = "INSERT INTO usuarios (nombre,apellidos, mail, contrasena) VALUES (?,?,?,?); ";
 $stmt= $conn->prepare($sql);
-$stmt->bind_param("sss", $fnombre, $fmail, $fcontrasena);
+$stmt->bind_param("ssss", $fnombre, $fmail, $fcontrasena);
 $stmt->execute();
 
 while ($row = mysqli_fetch_array($query)) {
