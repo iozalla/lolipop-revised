@@ -47,10 +47,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`mail`,`contrasena`, `nombre`, `apellidos`, `DNI`, `sexo`, `sexualidad`, `edad`, `gustos`, `altura`, `peso` ) VALUES
-('micha@gmail.com','Michael', 'Homar', '38285783Y', 'nb', 'sexualidad', 75, 'pelota', 1.75, 135),
-('chris@gmail.com','Christopher', 'Adolphus', '49933148X', 'n', 'sexualidad', 55, 'pelota', 1.75, 80),
-('jess@hdo.com','Jessica', 'Ammon', '13551093E', 'n', 'sexualidad', 26, 'pelota', 1.75, 56),
-('mattorchard@gmail.es','Matthew', 'Dawon', '61075806L', 'nb', 'sexualidad', 43, 'pelota', 1.75, 120);
+('micha@gmail.com', 'contrasena','Michael', 'Homar', '38285783Y', 'nb', 'sexualidad', 75, 'pelota', 1.75, 135),
+('chris@gmail.com', 'contrasena','Christopher', 'Adolphus', '49933148X', 'n', 'sexualidad', 55, 'pelota', 1.75, 80),
+('jess@hdo.com', 'contrasena','Jessica', 'Ammon', '13551093E', 'n', 'sexualidad', 26, 'pelota', 1.75, 56),
+('mattorchard@gmail.es', 'contrasena','Matthew', 'Dawon', '61075806L', 'nb', 'sexualidad', 43, 'pelota', 1.75, 120);
 
 
 
