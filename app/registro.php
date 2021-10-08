@@ -1,5 +1,5 @@
 <?php
-  echo '<h1>Yeah, it works!<h1>';
+
 
   // phpinfo();
   $hostname = "db";
@@ -17,21 +17,21 @@
 
 
  //https://phpdelusions.net/mysqli_examples/insert
- echo $nombre;
+
+#$sql = "INSERT INTO usuarios (nombre,apellidos, mail, contrasena) VALUES ('n1','ap',,'ail','contra'); "
 $sql = "INSERT INTO usuarios (nombre,apellidos, mail, contrasena) VALUES (?,?,?,?); ";
 $stmt= $conn->prepare($sql);
-$stmt->bind_param("ssss", $fnombre, $fmail, $fcontrasena);
-$stmt->execute();
-
-while ($row = mysqli_fetch_array($query)) {
-  echo
-   "<tr>
-    <td>{$row['id']}</td>
-    <td>{$row['nombre']}</td>
-    <td>asdasd</td><br>
-   </tr>";
+print($_GET["fnombre"]);
+$stmt->bind_param("ssss", $_GET["fnombre"],$_GET["fapellidos"], $_GET["fmail"], $_GET["fcontrasena"]);
 
 
+if ($stmt->execute()) {
+    // ok :-)
+    $count = $stmt->rowCount();
+    echo count . ' rows updated properly!';
+} else {
+    // KO :-(
+    print_r($stmt->error);
 }
 
 ?>

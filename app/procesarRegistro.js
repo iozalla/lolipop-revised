@@ -1,6 +1,6 @@
 
 
-function comprobarDatos(nombre, apellidos, mail, contraseña, dni, telefono,fecha){
+function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha){
   comprobarDNI(dni);
   comprobarNombreApellidos(nombre, apellidos);
   comprobarMail(mail);

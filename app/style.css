@@ -9,7 +9,7 @@
 t { color : #57483E; font-size: 75; font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;}
 t.c { color : #887162; font-size: 65; font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif}
 n { color : #57483E; font-size: 20; font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif }
-
+p {margin: 5px;}
 #cajita {
 
   background-color:#5f9ea0;
