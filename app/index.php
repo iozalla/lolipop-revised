@@ -1,5 +1,5 @@
 <?php
-  echo '<html lang="en">';
+  echo '<html lang="es">';
 
   echo '<link rel="stylesheet" type="text/css" href="style.css">';
   echo '
