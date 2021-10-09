@@ -13,16 +13,17 @@
   }
 
 
-//para meter los datos del registro se comprueba si ya existe el usuario
+
 
 
  //https://phpdelusions.net/mysqli_examples/insert
 
-#$sql = "INSERT INTO usuarios (nombre,apellidos, mail, contrasena) VALUES ('n1','ap',,'ail','contra'); "
+
+$contrasenaHasheada=password_hash($_GET["fcontrasena"],PASSWORD_DEFAULT); //esto se usa para hashear la contraseña https://www.php.net/manual/en/function.password-hash.php
 $sql = "INSERT INTO usuarios (nombre,apellidos, mail, contrasena) VALUES (?,?,?,?); ";
 $stmt= $conn->prepare($sql);//prepara el texto sql para que no haya inyecciones sql
 
-$stmt->bind_param("ssss", $_GET["fnombre"],$_GET["fapellidos"], $_GET["fmail"], $_GET["fcontrasena"]);//asigna los parametros
+$stmt->bind_param("ssss", $_GET["fnombre"],$_GET["fapellidos"], $_GET["fmail"], $contrasenaHasheada );//asigna los parametros
 
 
 if ($stmt->execute()) {//ejecuta la instruccion sql
@@ -30,7 +31,7 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
 
     echo ' rows updated properly!';
 } else {
-    
+
     print_r($stmt->error);
 }
 

@@ -29,7 +29,12 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
 
     $result = $stmt->get_result(); // conseguir el resultado sql
     $contrasena1 = $result->fetch_assoc(); //devuelve un array con el resultado
-    echo $contrasena1['contrasena'];
+    if (password_verify($_GET["fcontrasena"],$contrasena1['contrasena'])) {
+    echo 'Contraseña correcta';
+    } else {
+    echo 'Mail o contrasena incorrecta!';
+  }
+
     print_r(array_values($contrasena1));
 
 } else {
