@@ -20,15 +20,17 @@ function comprobarFecha(fecha){
     && fechaArray[1]<=12
     && fechaArray[2]<=3000){
       alert("fecha: "+ true)
+      return true
     }
-    else{alert("fecha: "+false)}
+    else{alert("fecha: "+false)
+    return false}
 
 }
 
 function comprobarTelefono(telefono){
 
   alert("telefono: "+!isNaN(telefono.value)&&telefono.value>=111111111&&telefono.value<=999999999)
-
+  return "telefono: "+!isNaN(telefono.value)&&telefono.value>=111111111&&telefono.value<=999999999
 
 }
 

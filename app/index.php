@@ -8,8 +8,9 @@
       <a href="registro.html">Registro</a><br><br>
       <a href="login.html">Login</a>
       </center>
-  ';
   
+  ';
+
 
   // phpinfo();
   $hostname = "db";

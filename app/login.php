@@ -18,7 +18,7 @@
 
  //https://phpdelusions.net/mysqli_examples/insert
 
-#$sql = "INSERT INTO usuarios (nombre,apellidos, mail, contrasena) VALUES ('n1','ap',,'ail','contra'); "
+
 $sql = "SELECT contrasena FROM `usuarios` WHERE mail=?; ";
 $stmt= $conn->prepare($sql);//prepara el texto sql para que no haya inyecciones sql
 
@@ -35,7 +35,7 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
     echo 'Mail o contrasena incorrecta!';
   }
 
-    print_r(array_values($contrasena1));
+
 
 } else {
 
