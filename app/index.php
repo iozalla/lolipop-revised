@@ -4,10 +4,12 @@
   echo '<link rel="stylesheet" type="text/css" href="style.css">';
   echo '
   <div id="cajita">
-      <a href="registro.html">Registro</a>
-
+      <center>
+      <a href="registro.html">Registro</a><br><br>
+      <a href="login.html">Login</a>
+      </center>
   ';
-  echo '<h1>Yeah, it works!<h1>';
+  
 
   // phpinfo();
   $hostname = "db";
