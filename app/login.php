@@ -19,19 +19,25 @@
  //https://phpdelusions.net/mysqli_examples/insert
 
 #$sql = "INSERT INTO usuarios (nombre,apellidos, mail, contrasena) VALUES ('n1','ap',,'ail','contra'); "
-$sql = "INSERT INTO usuarios (nombre,apellidos, mail, contrasena) VALUES (?,?,?,?); ";
+$sql = "SELECT contrasena FROM `usuarios` WHERE mail=?; ";
 $stmt= $conn->prepare($sql);//prepara el texto sql para que no haya inyecciones sql
 
-$stmt->bind_param("ssss", $_GET["fnombre"],$_GET["fapellidos"], $_GET["fmail"], $_GET["fcontrasena"]);//asigna los parametros
-
+$stmt->bind_param("s", $_GET["fmail"]);//asigna los parametros
 
 if ($stmt->execute()) {//ejecuta la instruccion sql
 
 
-    echo ' rows updated properly!';
+    $result = $stmt->get_result(); // conseguir el resultado sql
+    $contrasena1 = $result->fetch_assoc(); //devuelve un array con el resultado
+    echo $contrasena1['contrasena'];
+    print_r(array_values($contrasena1));
+
 } else {
-    
+
     print_r($stmt->error);
 }
+
+
+
 
 ?>
