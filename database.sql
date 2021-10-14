@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `usuarios` (
 
   `mail` varchar(50) NOT NULL,
-  `contrasena` varchar(50) NOT NULL,
+  `contrasena` varchar(255) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellidos`varchar(50) NOT NULL,
   `DNI` varchar(10),
