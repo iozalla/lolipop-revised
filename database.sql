@@ -35,8 +35,9 @@ CREATE TABLE `usuarios` (
   `apellidos`varchar(50) NOT NULL,
   `DNI` varchar(10),
   `sexo` varchar(50),
+  `telefono` varchar(9),
   `sexualidad` varchar(50),
-  `edad` int,
+  `fechaNac` varchar(50),
   `gustos` varchar(50),
   `altura` float,
   `peso` int
@@ -46,11 +47,11 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`mail`,`contrasena`, `nombre`, `apellidos`, `DNI`, `sexo`, `sexualidad`, `edad`, `gustos`, `altura`, `peso` ) VALUES
-('micha@gmail.com', 'contrasena','Michael', 'Homar', '38285783Y', 'nb', 'sexualidad', 75, 'pelota', 1.75, 135),
-('chris@gmail.com', 'contrasena','Christopher', 'Adolphus', '49933148X', 'n', 'sexualidad', 55, 'pelota', 1.75, 80),
-('jess@hdo.com', 'contrasena','Jessica', 'Ammon', '13551093E', 'n', 'sexualidad', 26, 'pelota', 1.75, 56),
-('mattorchard@gmail.es', 'contrasena','Matthew', 'Dawon', '61075806L', 'nb', 'sexualidad', 43, 'pelota', 1.75, 120);
+INSERT INTO `usuarios` (`mail`,`contrasena`, `nombre`, `apellidos`, `DNI`, `sexo`,`telefono`, `sexualidad`, `fechaNac`, `gustos`, `altura`, `peso` ) VALUES
+('micha@gmail.com', 'contrasena','Michael', 'Homar', '38285783Y', 'nb','666666666', 'sexualidad', '11-11-2000', 'pelota', 1.75, 135),
+('chris@gmail.com', 'contrasena','Christopher', 'Adolphus', '49933148X','666666666', 'n', 'sexualidad', '11-11-2000', 'pelota', 1.75, 80),
+('jess@hdo.com', 'contrasena','Jessica', 'Ammon', '13551093E', 'n', '666666666','sexualidad', '11-11-2000', 'pelota', 1.75, 56),
+('mattorchard@gmail.es', 'contrasena','Matthew', 'Dawon', '61075806L', 'nb','666666666', 'sexualidad', '11-11-2000', 'pelota', 1.75, 120);
 
 
 

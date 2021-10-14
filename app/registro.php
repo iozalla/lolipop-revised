@@ -20,10 +20,9 @@
 
 
 $contrasenaHasheada=password_hash($_GET["fcontrasena"],PASSWORD_DEFAULT); //esto se usa para hashear la contraseña https://www.php.net/manual/en/function.password-hash.php
-$sql = "INSERT INTO usuarios (nombre,apellidos, mail, contrasena) VALUES (?,?,?,?); ";
+$sql = "INSERT INTO usuarios (nombre,apellidos, mail, contrasena, DNI, telefono,fechaNac,sexo) VALUES (?,?,?,?,?,?,?,?); ";
 $stmt= $conn->prepare($sql);//prepara el texto sql para que no haya inyecciones sql
-
-$stmt->bind_param("ssss", $_GET["fnombre"],$_GET["fapellidos"], $_GET["fmail"], $contrasenaHasheada );//asigna los parametros
+$stmt->bind_param("ssssssss", $_GET["fnombre"],$_GET["fapellidos"], $_GET["fmail"], $contrasenaHasheada, $_GET["fdni"], $_GET["ftelefono"], $_GET["ffechanac"], $_GET["sexo"] );//asigna los parametros
 
 
 if ($stmt->execute()) {//ejecuta la instruccion sql
