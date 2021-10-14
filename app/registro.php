@@ -1,5 +1,11 @@
 <?php
-
+echo '
+<script type="text/javascript" src="procesarRegistro.js"></script>
+<script>
+if (!comprobarDatos()){
+  window.location.href = "/registro.html"
+}
+</script>';
 
   // phpinfo();
   $hostname = "db";

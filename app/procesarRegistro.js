@@ -1,11 +1,17 @@
 
 
 function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha){
-  comprobarDNI(dni);
-  comprobarNombreApellidos(nombre, apellidos);
-  comprobarMail(mail);
-  comprobarTelefono(telefono);
-  comprobarFecha(fecha);
+
+  if (comprobarDNI(dni)&&
+  comprobarNombreApellidos(nombre, apellidos)&&
+  comprobarMail(mail)&&
+  comprobarTelefono(telefono)&&
+  comprobarFecha(fecha)){
+    header("Location: registro.php");
+  }
+  else{
+    header("Location: registro.html")
+  }
 }
 function comprobarFecha(fecha){
   const fechaArray = fecha.value.split("-")
@@ -45,7 +51,7 @@ function comprobarMail(mail){
   nServidor=mailArray[1].split(".")[0]
   extension=mailArray[1].split(".")[1]
     if ((typeof nMail === 'string') && (typeof nServidor === 'string') && (typeof extension === 'string')){ //comprobamos que todo sea tipo texto
-      alert("mail correcto")
+
       return true
     }
   }
@@ -67,12 +73,10 @@ function comprobarDNI(fdni){
         && (numDNI>=11111111)//miramos que el dni tenga 8 digitos numericos
         && (numDNI<=99999999)
         && (letrasDNI[myArr[0]%23]==myArr[1])) {//comprobamos que la letra del dni este bien
-
-
-    alert("Buen DNI miniño");
-    }else {
-      alert(": "+letrasDNI[myArr[0]%23]);
-      alert("?? esta mal xd");
+            alert("Buen DNI");
+            return true;}
+    else {
+      alert("letra que deberia ser: "+letrasDNI[myArr[0]%23]);
       return false;
     }
   }
