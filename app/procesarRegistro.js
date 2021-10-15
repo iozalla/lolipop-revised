@@ -1,5 +1,4 @@
 
-
 function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha){
 
   if (comprobarDNI(dni)&&
@@ -8,11 +7,15 @@ function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha
   comprobarTelefono(telefono)&&
   comprobarFecha(fecha)){
 
-     window.location = "https://www.campuslife.co.in";
+    web=window.location.href.replace("html","php");
+    web=`${web}?fmail=${mail.value}&fcontrasena=${contrasena.value}&fnombre=${nombre.value}&fapellidos=${apellidos.value}&fdni=${dni.value}&ftelefono=${telefono.value}&ffechanac=${fecha.value}`
+    alert(web)
+    window.location = web;
+    alert("registro")
   }
   else{
-    print(window.location.href)
-     window.location = "https://www.campuslife.co.in";
+    alert("datos incorrectos")
+    location.reload();
   }
 }
 function comprobarFecha(fecha){
@@ -89,3 +92,4 @@ function comprobarDNI(fdni){
 
 
 }
+
