@@ -27,10 +27,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $nombre=$info['nombre'];
         $apellido=$info['apellidos'];
         $mail=$info['mail'];
+        $telefono=$info['telefono'];
 
         echo "nombre: $nombre <br>
               apellidos:$apellido <br>
-              mail: $telefono<br>"  ;
+              mail: $mail<br>
+              telefono: $telefono"  ;
 
   }
 
