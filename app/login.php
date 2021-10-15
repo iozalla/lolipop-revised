@@ -47,8 +47,7 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
 
     print_r($stmt->error);
     echo '<script>
-            window.location = "login.php";
-            alert("error")
+            location.reload();
           </script>';
 }
 

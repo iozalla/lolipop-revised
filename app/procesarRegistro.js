@@ -9,8 +9,9 @@ function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha
 
     web=window.location.href.replace("html","php");
     web=`${web}?fmail=${mail.value}&fcontrasena=${contrasena.value}&fnombre=${nombre.value}&fapellidos=${apellidos.value}&fdni=${dni.value}&ftelefono=${telefono.value}&ffechanac=${fecha.value}&fsexo=${sexo.value}`
-    alert(web)
+
     window.location = web;
+
     alert("registro")
   }
   else{
@@ -30,7 +31,7 @@ function comprobarFecha(fecha){
     && fechaArray[0]<=30
     && fechaArray[1]<=12
     && fechaArray[2]<=3000){
-      alert("fecha: "+ true)
+
       return true
     }
     else{alert("fecha: "+false)
@@ -79,7 +80,7 @@ function comprobarDNI(fdni){
         && (numDNI>=11111111)//miramos que el dni tenga 8 digitos numericos
         && (numDNI<=99999999)
         && (letrasDNI[myArr[0]%23]==myArr[1])) {//comprobamos que la letra del dni este bien
-            alert("Buen DNI");
+
             return true;}
     else {
       alert("letra que deberia ser: "+letrasDNI[myArr[0]%23]);
