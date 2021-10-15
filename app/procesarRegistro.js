@@ -1,5 +1,5 @@
 
-function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha){
+function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha,sexo){
 
   if (comprobarDNI(dni)&&
   comprobarNombreApellidos(nombre, apellidos)&&
@@ -8,7 +8,7 @@ function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha
   comprobarFecha(fecha)){
 
     web=window.location.href.replace("html","php");
-    web=`${web}?fmail=${mail.value}&fcontrasena=${contrasena.value}&fnombre=${nombre.value}&fapellidos=${apellidos.value}&fdni=${dni.value}&ftelefono=${telefono.value}&ffechanac=${fecha.value}`
+    web=`${web}?fmail=${mail.value}&fcontrasena=${contrasena.value}&fnombre=${nombre.value}&fapellidos=${apellidos.value}&fdni=${dni.value}&ftelefono=${telefono.value}&ffechanac=${fecha.value}&fsexo=${sexo.value}`
     alert(web)
     window.location = web;
     alert("registro")
@@ -92,4 +92,3 @@ function comprobarDNI(fdni){
 
 
 }
-

@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();//para poder acceder a las variables de la sesion
   // phpinfo();
   $hostname = "db";
   $username = "admin";
@@ -13,10 +13,10 @@
   }
 
 
-//para meter los datos del registro se comprueba si ya existe el usuario
 
 
- //https://phpdelusions.net/mysqli_examples/insert
+
+
 
 
 $sql = "SELECT contrasena FROM `usuarios` WHERE mail=?; ";
@@ -31,6 +31,12 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
     $contrasena1 = $result->fetch_assoc(); //devuelve un array con el resultado
     if (password_verify($_GET["fcontrasena"],$contrasena1['contrasena'])) {
     echo 'Contraseña correcta';
+    $_SESSION['loggedin'] = true;
+    $_SESSION['username'] = $_GET["fmail"];
+    echo '<script>
+            window.location = "profile.php";
+            alert("success")
+          </script>';
     } else {
     echo 'Mail o contrasena incorrecta!';
   }
@@ -40,6 +46,10 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
 } else {
 
     print_r($stmt->error);
+    echo '<script>
+            window.location = "login.php";
+            alert("error")
+          </script>';
 }
 
 
