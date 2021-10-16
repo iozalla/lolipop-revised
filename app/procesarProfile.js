@@ -30,11 +30,11 @@ function comprobarFecha(fecha){
     && fechaArray[2].length>0
     && fechaArray[0]<=30
     && fechaArray[1]<=12
-    && fechaArray[2]<=3000){
+    && fechaArray[2]<=2001){
 
       return true
     }
-    else{alert("fecha: "+false)
+    else{alert("Tienes que ser mayor de edad y el formato de fecha es el siguiente dd-mm-aaaa")
     return false}
 
 }

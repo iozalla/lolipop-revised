@@ -1,5 +1,6 @@
+<?php session_start(); ?>
+
 <?php
-session_start(); //esto hay que ponerlo en todas las paginas en las que se requiera estar loggeado para poder acceder a las variables de session
 echo '<div id="cajita">';
 echo '<center>';
 echo '<link rel="stylesheet" type="text/css" href="style.css">';
@@ -61,13 +62,15 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 <b><n>DNI:     <br>    <input type='text' id='fdni' name='fdni' value='$dni'><br><br>
                 TELEFONO:  <br>  <input type='tel' id='ftelefono' name='ftelefono' value='$telefono'><br><br>
                 FECHA NACIMIENTO:<br>  </n></b>   <input type='tel' id='ffechanac' name='ffechanac' value='$fecha'><br><br>
-                GUSTOS:<br>  </n></b>   <input type='tel' id='fgustos' name='fgustos' value='$gustos'><br><br>
+
+
+                  GUSTOS (separados por coma):<br>  </n></b>        <textarea id='fgustos' name='fgustos' rows='4' cols='50'>  $gustos</textarea><br><br>
                 <table>
 
 
                 <tr>
-                SEXO: $sexo <br>
-                SEXUALIDAD <br>
+                SEXO: $sexo <br> <br>
+                SEXUALIDAD: <br>
                 <td><input type='radio' name='fsexualidad' value='hetero' checked> Hetero<br></td>
                 </tr>
                 <tr>
