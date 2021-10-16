@@ -21,18 +21,68 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
     $stmt->bind_param("s", $_SESSION['username']);//asigna los parametros
   if ($stmt->execute()) {//ejecuta la instruccion sql
-        echo "Este es tu perfil " . $_SESSION['username'] . " Aqui podras consultar tus datos y editarlos si lo deseas.\n";
         $result = $stmt->get_result(); // conseguir el resultado sql
         $info = $result->fetch_assoc(); //devuelve un array con el resultado
         $nombre=$info['nombre'];
         $apellido=$info['apellidos'];
         $mail=$info['mail'];
         $telefono=$info['telefono'];
+        $dni=$info['DNI'];
+        $gustos=$info['gustos'];
+        $fecha=$info['fechaNac'];
+        echo "Este es tu perfil " . $nombre . ". Aqui podras consultar tus datos y editarlos si lo deseas.\n";
 
-        echo "nombre: $nombre <br>
-              apellidos:$apellido <br>
-              mail: $mail<br>
-              telefono: $telefono"  ;
+        echo "
+        <html lang='es'>
+        <head>
+          <link rel='icon' href='images/logo.png'>
+          <link rel='stylesheet' type='text/css' href='style.css'>
+            <title>
+              Lolipop
+            </title>
+        </head>
+
+      <body background='images/fondo.gif'>
+        <form>
+            <div id='cajita'>
+
+                <center><t> Loli<b><t class='c'>pop</t></b></t><br><br>
+                  <img src='images/logo.png' alt='Lolipop Logo' style='width:70px;height:70px';><br><br>
+
+                <center>
+                <b><n>E-MAIL:<br> <input type='email' id='fmail' name='fmail' value=$mail><br><br>
+                <table>
+                <tr>
+                <th><b><n>NOMBRE:</th>    <th><input type='text' id='fnombre' name='fnombre' value=$nombre>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+                <th><b><n>APELLIDOS:</th>   <th><input type='text' id='fapellidos' name='fapellidos' value=$apellido></th>
+                </table><br>
+                <center>
+                <b><n>DNI:     <br>    <input type='text' id='fdni' name='fdni' value=$dni><br><br>
+                TELEFONO:  <br>  <input type='tel' id='ftelefono' name='ftelefono' value=$telefono><br><br>
+                FECHA NACIMIENTO:<br>  </n></b>   <input type='tel' id='ffechanac' name='ffechanac' value=$fecha><br><br>
+                GUSTOS:<br>  </n></b>   <input type='tel' id='fgustos' name='fgustos' value='ninguno'><br><br>
+                <table>
+
+
+                <tr>
+                <td><input type='radio' name='fsexualidad' value='hetero' checked> Hetero<br></td>
+                </tr>
+                <tr>
+                <td><input type='radio' name='fsexualidad' value='bi'> Bi<br></td>
+                </tr>
+                <tr>
+                <td><input type='radio' name='fsexualidad' value='homo'> Homo<br></td>
+                </tr>
+
+
+                <script type='text/javascript' src='procesarProfile.js'></script>
+              <th>  <button onclick='comprobarDatos(fnombre,fapellidos,fmail,fcontrasena,fdni,ftelefono,ffechanac,fsexo,fsexualidad,fgustos)'>Comprobar</button></th>
+      </table>
+
+          </div>
+        </form>
+      </body>
+      ";
 
   }
 
