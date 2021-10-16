@@ -30,6 +30,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $dni=$info['DNI'];
         $gustos=$info['gustos'];
         $fecha=$info['fechaNac'];
+        $sexo=$info['sexo'];
         echo "Este es tu perfil " . $nombre . ". Aqui podras consultar tus datos y editarlos si lo deseas.\n";
 
         echo "
@@ -50,21 +51,23 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                   <img src='images/logo.png' alt='Lolipop Logo' style='width:70px;height:70px';><br><br>
 
                 <center>
-                <b><n>E-MAIL:<br> <input type='email' id='fmail' name='fmail' value=$mail><br><br>
+                <b><n>E-MAIL: '$mail'<br><br>
                 <table>
                 <tr>
-                <th><b><n>NOMBRE:</th>    <th><input type='text' id='fnombre' name='fnombre' value=$nombre>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
-                <th><b><n>APELLIDOS:</th>   <th><input type='text' id='fapellidos' name='fapellidos' value=$apellido></th>
+                <th><b><n>NOMBRE:</th>    <th><input type='text' id='fnombre' name='fnombre' value='$nombre'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+                <th><b><n>APELLIDOS:</th>   <th><input type='text' id='fapellidos' name='fapellidos' value='$apellido'></th>
                 </table><br>
                 <center>
-                <b><n>DNI:     <br>    <input type='text' id='fdni' name='fdni' value=$dni><br><br>
-                TELEFONO:  <br>  <input type='tel' id='ftelefono' name='ftelefono' value=$telefono><br><br>
-                FECHA NACIMIENTO:<br>  </n></b>   <input type='tel' id='ffechanac' name='ffechanac' value=$fecha><br><br>
-                GUSTOS:<br>  </n></b>   <input type='tel' id='fgustos' name='fgustos' value='ninguno'><br><br>
+                <b><n>DNI:     <br>    <input type='text' id='fdni' name='fdni' value='$dni'><br><br>
+                TELEFONO:  <br>  <input type='tel' id='ftelefono' name='ftelefono' value='$telefono'><br><br>
+                FECHA NACIMIENTO:<br>  </n></b>   <input type='tel' id='ffechanac' name='ffechanac' value='$fecha'><br><br>
+                GUSTOS:<br>  </n></b>   <input type='tel' id='fgustos' name='fgustos' value='$gustos'><br><br>
                 <table>
 
 
                 <tr>
+                SEXO: $sexo <br>
+                SEXUALIDAD <br>
                 <td><input type='radio' name='fsexualidad' value='hetero' checked> Hetero<br></td>
                 </tr>
                 <tr>
@@ -76,7 +79,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 
                 <script type='text/javascript' src='procesarProfile.js'></script>
-              <th>  <button onclick='comprobarDatos(fnombre,fapellidos,fmail,fcontrasena,fdni,ftelefono,ffechanac,fsexo,fsexualidad,fgustos)'>Comprobar</button></th>
+              <th>  <button onclick='comprobarDatos(fnombre,fapellidos,fdni,ftelefono,ffechanac,fsexualidad,fgustos)'>Comprobar</button></th>
       </table>
 
           </div>
