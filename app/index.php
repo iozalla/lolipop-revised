@@ -18,7 +18,10 @@
           	</center>
 	      <center>
 	      <a href="registro.html"><b><n>Registro</a><br><br>
+        <a href="profile.html"><b><n>Perfil</a><br><br>
 	      <a href="login.html"><b><n>Login</a>
+        <a href="anadirElemento.html"><b><n>A&ntildeadir elemento</a><br><br>
+        <a href="editarElemento.php"><b><n>Editar Elemento</a><br><br>
 	      </center>
       </div>
   </form>
@@ -26,7 +29,7 @@
   ';
 
 
-  
+
 echo'</div>'
 
 ?>
