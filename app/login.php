@@ -34,7 +34,7 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $_GET["fmail"];
     echo '<script>
-            window.location = "profile.php";
+            window.location = "editProfile.php";
             alert("success")
           </script>';
     } else {
