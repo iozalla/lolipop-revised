@@ -1,5 +1,5 @@
 
-function comprobarDatos(nombre, apellidos, dni, telefono,fecha,sexualidad,gustos){
+function comprobarDatos(nombre, apellidos, dni, telefono,fecha,sexualidad,gustos,peso,altura){
 
   if (comprobarDNI(dni)&&
   comprobarNombreApellidos(nombre, apellidos)&&
@@ -7,8 +7,8 @@ function comprobarDatos(nombre, apellidos, dni, telefono,fecha,sexualidad,gustos
   comprobarTelefono(telefono)&&
   comprobarFecha(fecha)){
 
-    web=window.location.href.replace("profile.php","profileEdition.php");
-    web=`${web}?fsexualidad=${sexualidad.value}&fnombre=${nombre.value}&fapellidos=${apellidos.value}&fdni=${dni.value}&ftelefono=${telefono.value}&ffechanac=${fecha.value}&fgustos=${gustos.value}`
+    web=window.location.href.replace("editProfile.php","profileEdition.php");
+    web=`${web}?fsexualidad=${sexualidad.value}&fnombre=${nombre.value}&fapellidos=${apellidos.value}&fdni=${dni.value}&ftelefono=${telefono.value}&ffechanac=${fecha.value}&fgustos=${gustos.value}&fpeso=${peso.value}&faltura=${altura.value}`
 
     window.location = web;
 
@@ -16,7 +16,7 @@ function comprobarDatos(nombre, apellidos, dni, telefono,fecha,sexualidad,gustos
   }
   else{
     alert("datos incorrectos")
-    location.reload();
+    //location.reload();
   }
 }
 function comprobarFecha(fecha){

@@ -19,23 +19,24 @@
  //https://phpdelusions.net/mysqli_examples/insert
 
 
-$sql =  "UPDATE usuarios SET nombre = ?, apellidos= ?,sexualidad=?,DNI=?,telefono=?,fechaNac=?,gustos=? WHERE mail = ?;";
+$sql =  "UPDATE usuarios SET nombre = ?, apellidos= ?,sexualidad=?,DNI=?,telefono=?,fechaNac=?,gustos=?,peso=?,altura=? WHERE mail = ?;";
 
 $stmt= $conn->prepare($sql);//prepara el texto sql para que no haya inyecciones sql
-$stmt->bind_param("ssssssss", $_GET["fnombre"],$_GET["fapellidos"], $_GET["fsexualidad"], $_GET["fdni"], $_GET["ftelefono"], $_GET["ffechanac"], $_GET["fgustos"],$_SESSION["username"]);//asigna los parametros
+$stmt->bind_param("ssssssssss", $_GET["fnombre"],$_GET["fapellidos"], $_GET["fsexualidad"], $_GET["fdni"], $_GET["ftelefono"], $_GET["ffechanac"], $_GET["fgustos"],$_GET["fpeso"],$_GET["faltura"],$_SESSION["username"]);//asigna los parametros
 
 
 if ($stmt->execute()) {//ejecuta la instruccion sql
 
 
-    echo ' rows updated properly!';
 
     echo '
 
-    <script>
-window.location = "profile.php";
-      alert("datos editados correctamente")
-    </script>';
+<script>
+  window.location = "editProfile.php";
+  alert("datos editados correctamente")
+</script>';
+
+
 } else {
 
     print_r($stmt->error);

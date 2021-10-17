@@ -32,6 +32,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $gustos=$info['gustos'];
         $fecha=$info['fechaNac'];
         $sexo=$info['sexo'];
+        $peso=$info['peso'];
+        $altura=$info['altura'];
         echo "Este es tu perfil " . $nombre . ". Aqui podras consultar tus datos y editarlos si lo deseas.\n";
 
         echo "
@@ -62,31 +64,47 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 <b><n>DNI:     <br>    <input type='text' id='fdni' name='fdni' value='$dni'><br><br>
                 TELEFONO:  <br>  <input type='tel' id='ftelefono' name='ftelefono' value='$telefono'><br><br>
                 FECHA NACIMIENTO:<br>  </n></b>   <input type='tel' id='ffechanac' name='ffechanac' value='$fecha'><br><br>
+                <th><b><n>PESO(kg):</th>    <th><input type='text' id='fpeso' name='fpeso' value='$peso'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+                <th><b><n>ALTURA(cm):</th>   <th><input type='text' id='faltura' name='faltura' value='$altura'></th><br><br>
 
-
-                  GUSTOS (separados por coma):<br>  </n></b>        <textarea id='fgustos' name='fgustos' rows='4' cols='50'>  $gustos</textarea><br><br>
+                GUSTOS(separados por coma):<br></n></b><textarea id='fgustos' name='fgustos' rows='4' cols='50'>$gustos</textarea><br><br>
                 <table>
 
 
                 <tr>
                 SEXO: $sexo <br> <br>
                 SEXUALIDAD: <br>
-                <td><input type='radio' name='fsexualidad' value='hetero' checked> Hetero<br></td>
+                <td><input type='radio' name='fsexualidad' value='hetero' checked><n> Hetero</n><br></td>
                 </tr>
                 <tr>
-                <td><input type='radio' name='fsexualidad' value='bi'> Bi<br></td>
+                <td><input type='radio' name='fsexualidad' value='bi'><n> Bi</n><br></td>
                 </tr>
                 <tr>
-                <td><input type='radio' name='fsexualidad' value='homo'> Homo<br></td>
+                <td><input type='radio' name='fsexualidad' value='homo'><n> Homo</n><br></td>
+
                 </tr>
+
 
 
                 <script type='text/javascript' src='procesarProfile.js'></script>
-              <th>  <button onclick='comprobarDatos(fnombre,fapellidos,fdni,ftelefono,ffechanac,fsexualidad,fgustos)'>Comprobar</button></th>
+              <th>  <button onclick='comprobarDatos(fnombre,fapellidos,fdni,ftelefono,ffechanac,fsexualidad,fgustos,fpeso,faltura)'>ActualizarDatos</button></th>
+
       </table>
+
+
 
           </div>
         </form>
+        <br>
+        <center>
+        OTROS USUARIOS:<br>
+
+        <iframe src='/explore.php' name='targetframe' allowTransparency='true' scrolling='yes' width='600' length='800' frameborder='0' >
+
+        </iframe>
+
+        </center>
+      <div>
       </body>
       ";
 
