@@ -16,7 +16,7 @@ function comprobarDatos(nombre, apellidos, dni, telefono,fecha,sexualidad,gustos
   }
   else{
     alert("datos incorrectos")
-    //location.reload();
+    location.reload();
   }
 }
 function comprobarFecha(fecha){
