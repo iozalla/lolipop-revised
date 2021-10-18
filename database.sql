@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Oct 17, 2021 at 11:58 AM
+-- Generation Time: Oct 18, 2021 at 02:58 PM
 -- Server version: 10.6.4-MariaDB-1:10.6.4+maria~focal
 -- PHP Version: 7.4.20
 
@@ -24,6 +24,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `elementos`
+--
+
+CREATE TABLE `elementos` (
+  `id` int(11) NOT NULL,
+  `gustos` text NOT NULL,
+  `edad` int(11) NOT NULL,
+  `altura` int(11) NOT NULL,
+  `peso` int(11) NOT NULL,
+  `sexo` text NOT NULL,
+  `mail` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `elementos`
+--
+
+INSERT INTO `elementos` (`id`, `gustos`, `edad`, `altura`, `peso`, `sexo`, `mail`) VALUES
+(1, 'asas2', 12212, 22212, 2111, 'hombre2', 'MARCO@gmail.com'),
+(2, 'helado', 222, 2222, 222, 'Mujer', 'MARCO@gmail.com'),
+(3, 'que le guste comer y dormir.', 45, 167, 663, 'Mujer', 'test1@gmail.com');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `seguidores`
 --
 
@@ -40,7 +65,10 @@ INSERT INTO `seguidores` (`followerMail`, `followedMail`) VALUES
 ('pepe', 'sadas'),
 ('iozono11@gmail.com', '$mail'),
 ('iozono11@gmail.com', 'jess@hdo.com'),
-('iozono11@gmail.com', 'iozono11@gmail.com');
+('iozono11@gmail.com', 'iozono11@gmail.com'),
+('MARCO@gmail.com', 'MARCO@gmail.com'),
+('MARCO@gmail.com', 'iozono11@gmail.com'),
+('test1@gmail.com', 'mattorchard@gmail.es');
 
 -- --------------------------------------------------------
 
@@ -59,7 +87,7 @@ CREATE TABLE `usuarios` (
   `sexualidad` varchar(50) DEFAULT NULL,
   `fechaNac` varchar(50) DEFAULT NULL,
   `gustos` text DEFAULT NULL,
-  `altura` float DEFAULT NULL,
+  `altura` int(11) DEFAULT NULL,
   `peso` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -68,21 +96,39 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`mail`, `contrasena`, `nombre`, `apellidos`, `DNI`, `sexo`, `telefono`, `sexualidad`, `fechaNac`, `gustos`, `altura`, `peso`) VALUES
-('chris@gmail.com', 'contrasena', 'pene', 'Adolphus', '49933148X', '666666666', 'n', 'sexualidad', '11-11-2000', 'pelota', 1.75, 80),
-('iozono11@gmail.com', '$2y$10$SbtZGQ.7bST9XdHqORJiwO4JBI1.T/NqCMlSfTBnuZoI2p4MmL43e', 'iniogjaj', 'ozalla', '79245943-H', 'hombre', '123456789', 'hetero', '11-11-1111', 'Jugar al lol', NULL, NULL),
-('jess@hdo.com', 'contrasena', 'Jessica', 'Ammon', '13551093E', 'n', '666666666', 'sexualidad', '11-11-2000', 'pelota', 1.75, 56),
-('mattorchard@gmail.es', 'contrasena', 'Matthew', 'Dawon', '61075806L', 'nb', '666666666', 'sexualidad', '11-11-2000', 'pelota', 1.75, 120),
-('micha@gmail.com', 'contrasena', 'Michael', 'Homar', '38285783Y', 'nb', '666666666', 'sexualidad', '11-11-2000', 'pelota', 1.75, 135);
+('chris@gmail.com', 'contrasena', 'pene', 'Adolphus', '49933148X', '666666666', 'n', 'sexualidad', '11-11-2000', 'pelota', 2, 80),
+('iozono11@gmail.com', '$2y$10$SbtZGQ.7bST9XdHqORJiwO4JBI1.T/NqCMlSfTBnuZoI2p4MmL43e', 'iniogjaj', 'ozalla', '79245943-H', 'hombre', '111111111', 'hetero', '11-11-1111', 'Jugar al lol AJAJAJaA y comer mucho vegetal', 170, 120),
+('jess@hdo.com', 'contrasena', 'Jessica', 'Ammon', '13551093E', 'n', '666666666', 'sexualidad', '11-11-2000', 'pelota', 2, 56),
+('MARCO@gmail.com', '$2y$10$hKHZEUCL7HwAEj4jSq8Scewbp9Rundru1e6I4yayUM/EfzP5NENgS', 'MARCO', 'POLO', '79245943-H', 'hombre', '777777777', 'hetero', '11-11-1111', 'vender seda, ir de expedicion, jugar al lol.', 170, 60),
+('mattorchard@gmail.es', 'contrasena', 'Matthew', 'Dawon', '61075806L', 'nb', '666666666', 'sexualidad', '11-11-2000', 'pelota', 2, 120),
+('micha@gmail.com', 'contrasena', 'Michael', 'Homar', '38285783Y', 'nb', '666666666', 'sexualidad', '11-11-2000', 'pelota', 2, 135),
+('test1@gmail.com', '$2y$10$DFRI0DevEPSrA9W.TlIDt.Nk6hBdTfWnY7TQIoMa90/GZRFgen.IS', 'ntestt', 'atestt', '79245943-H', 'Mujer', '777777777', 'hetero?fsexualidad=hetero', '11-11-1111', 'comer,dormir,comer, dormir, comer y dormir.', 176, 68);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `elementos`
+--
+ALTER TABLE `elementos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`mail`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `elementos`
+--
+ALTER TABLE `elementos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
