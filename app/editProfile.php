@@ -1,6 +1,15 @@
 <?php session_start(); ?>
 
 <?php
+echo "<div id='cabecera'>
+  <div>
+    <center>
+    <b><n><a class='active' href='#home'>Inicio</a>
+    <b><n><a href='#contact'>Explora</a>
+    <b><n><a href='#about'>Perfil</a>
+    </center>
+    </div>
+  </div>";
 echo '<div id="cajita">';
 echo '<center>';
 echo '<link rel="stylesheet" type="text/css" href="style.css">';
@@ -47,6 +56,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         </head>
 
       <body background='images/fondo.gif'>
+
         <form>
             <div id='cajita'>
 
