@@ -42,9 +42,9 @@ CREATE TABLE `elementos` (
 --
 
 INSERT INTO `elementos` (`id`, `gustos`, `edad`, `altura`, `peso`, `sexo`, `mail`) VALUES
-(1, 'asas2', 12212, 22212, 2111, 'hombre2', 'MARCO@gmail.com'),
-(2, 'helado', 222, 2222, 222, 'Mujer', 'MARCO@gmail.com'),
-(3, 'que le guste comer y dormir.', 45, 167, 663, 'Mujer', 'test1@gmail.com');
+(1, 'Que le guste el gym, los gatos y el manga', 32, 168, 80, 'hombre2', 'MARCO@gmail.com'),
+(2, 'Soy gamer, me gustan las chicas que juegan al LOL', 23, 175, 70, 'Mujer', 'MARCO@gmail.com'),
+(3, 'Que le guste comer y dormir, soy simple', 45, 167, 55, 'Mujer', 'test1@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -96,13 +96,13 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`mail`, `contrasena`, `nombre`, `apellidos`, `DNI`, `sexo`, `telefono`, `sexualidad`, `fechaNac`, `gustos`, `altura`, `peso`) VALUES
-('chris@gmail.com', 'contrasena', 'pene', 'Adolphus', '49933148X', '666666666', 'n', 'sexualidad', '11-11-2000', 'pelota', 2, 80),
-('iozono11@gmail.com', '$2y$10$SbtZGQ.7bST9XdHqORJiwO4JBI1.T/NqCMlSfTBnuZoI2p4MmL43e', 'iniogjaj', 'ozalla', '79245943-H', 'hombre', '111111111', 'hetero', '11-11-1111', 'Jugar al lol AJAJAJaA y comer mucho vegetal', 170, 120),
-('jess@hdo.com', 'contrasena', 'Jessica', 'Ammon', '13551093E', 'n', '666666666', 'sexualidad', '11-11-2000', 'pelota', 2, 56),
+
+('iozono11@gmail.com', '$2y$10$SbtZGQ.7bST9XdHqORJiwO4JBI1.T/NqCMlSfTBnuZoI2p4MmL43e', 'Martin', 'ozalla', '79245943-H', 'hombre', '111111111', 'hetero', '11-11-1111', 'Jugar al lol y comer mucho vegetal', 170, 60),
+
 ('MARCO@gmail.com', '$2y$10$hKHZEUCL7HwAEj4jSq8Scewbp9Rundru1e6I4yayUM/EfzP5NENgS', 'MARCO', 'POLO', '79245943-H', 'hombre', '777777777', 'hetero', '11-11-1111', 'vender seda, ir de expedicion, jugar al lol.', 170, 60),
-('mattorchard@gmail.es', 'contrasena', 'Matthew', 'Dawon', '61075806L', 'nb', '666666666', 'sexualidad', '11-11-2000', 'pelota', 2, 120),
-('micha@gmail.com', 'contrasena', 'Michael', 'Homar', '38285783Y', 'nb', '666666666', 'sexualidad', '11-11-2000', 'pelota', 2, 135),
-('test1@gmail.com', '$2y$10$DFRI0DevEPSrA9W.TlIDt.Nk6hBdTfWnY7TQIoMa90/GZRFgen.IS', 'ntestt', 'atestt', '79245943-H', 'Mujer', '777777777', 'hetero?fsexualidad=hetero', '11-11-1111', 'comer,dormir,comer, dormir, comer y dormir.', 176, 68);
+
+
+('test1@gmail.com', '$2y$10$DFRI0DevEPSrA9W.TlIDt.Nk6hBdTfWnY7TQIoMa90/GZRFgen.IS', 'ntestt', 'atestt', '79245943-H', 'Mujer', '777777777', 'hetero', '11-11-1111', 'Ir a raves de fiesta', 176, 68);
 
 --
 -- Indexes for dumped tables
@@ -134,3 +134,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

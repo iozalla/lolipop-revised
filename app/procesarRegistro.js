@@ -34,7 +34,8 @@ function comprobarFecha(fecha){
 
       return true
     }
-    else{alert("fecha: "+false)
+    else{
+    alert("fecha incorrecta")
     return false}
 
 }
