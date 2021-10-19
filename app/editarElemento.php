@@ -23,7 +23,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 
     if ($stmt->execute()) {//ejecuta la instruccion sql
-      echo $_GET["fgustos"],$_GET["fpeso"],$_GET["fsexo"],$_GET["faltura"],$_GET["fedad"], $_GET["fid"],$_SESSION["username"];
+      echo "SUCCESS";
+      echo '<script>
+              window.location = "verElementos.php";
+              alert("success")
+            </script>';
+            
 
 
 

@@ -36,7 +36,7 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
     echo '<script>
             window.location = "editProfile.php";
             alert("success")
-          </script>';
+          </script>';//redireccionar a editarPerfil
     } else {
     echo 'Mail o contrasena incorrecta!';
   }
@@ -48,7 +48,7 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
     print_r($stmt->error);
     echo '<script>
             location.reload();
-          </script>';
+          </script>';//recargar la pagina
 }
 
 

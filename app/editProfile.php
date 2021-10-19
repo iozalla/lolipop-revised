@@ -1,6 +1,17 @@
 <?php session_start(); ?>
 
 <?php
+echo "<div id='cabecera'>
+<center>
+  <b><n><a class='active' href='index.php'>Inicio</a>    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <b><n><a href='explore.php'>Explora</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <b><n><a href='profileEdition.php'>Perfil</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <b><n><a href='anadirElemento.html'>A&ntildeadir Elemento</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <b><n><a href='verElementos.php'>Ver Elemento</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+  </center>
+</div>";
 echo '<div id="cajita">';
 echo '<center>';
 echo '<link rel="stylesheet" type="text/css" href="style.css">';
@@ -45,14 +56,11 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
               Lolipop
             </title>
         </head>
-
       <body background='images/fondo.gif'>
         <form>
             <div id='cajita'>
-
                 <center><t> Loli<b><t class='c'>pop</t></b></t><br><br>
                   <img src='images/logo.png' alt='Lolipop Logo' style='width:70px;height:70px';><br><br>
-
                 <center>
                 <b><n>E-MAIL: '$mail'<br><br>
                 <table>
@@ -66,11 +74,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 FECHA NACIMIENTO:<br>  </n></b>   <input type='tel' id='ffechanac' name='ffechanac' value='$fecha'><br><br>
                 <th><b><n>PESO(kg):</th>    <th><input type='text' id='fpeso' name='fpeso' value='$peso'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
                 <th><b><n>ALTURA(cm):</th>   <th><input type='text' id='faltura' name='faltura' value='$altura'></th><br><br>
-
                 GUSTOS(separados por coma):<br></n></b><textarea id='fgustos' name='fgustos' rows='4' cols='50'>$gustos</textarea><br><br>
                 <table>
-
-
                 <tr>
                 SEXO: $sexo <br> <br>
                 SEXUALIDAD: <br>
@@ -81,28 +86,17 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 </tr>
                 <tr>
                 <td><input type='radio' name='fsexualidad' value='homo'><n> Homo</n><br></td>
-
                 </tr>
-
-
-
                 <script type='text/javascript' src='procesarProfile.js'></script>
               <th>  <button onclick='comprobarDatos(fnombre,fapellidos,fdni,ftelefono,ffechanac,fsexualidad,fgustos,fpeso,faltura)'>ActualizarDatos</button></th>
-
       </table>
-
-
-
           </div>
         </form>
         <br>
         <center>
         OTROS USUARIOS:<br>
-
         <iframe src='/explore.php' name='targetframe' allowTransparency='true' scrolling='yes' width='600' length='800' frameborder='0' >
-
         </iframe>
-
         </center>
       <div>
       </body>

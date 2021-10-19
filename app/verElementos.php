@@ -1,5 +1,21 @@
 <?php session_start(); ?>
+
+
 <?php
+echo "<div id='cabecera'>
+<center>
+  <b><n><a class='active' href='index.html'>Inicio</a>    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <b><n><a href='explore.php'>Explora</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <b><n><a href='profileEdition.php'>Perfil</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <b><n><a href='anadirElemento.html'>A&ntildeadir Elemento</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <b><n><a href='verElementos.php'>Ver Elemento</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+  </center>
+</div>
+<head><link rel='stylesheet' type='text/css' href='style.css'></head>
+<div id='cajita'>
+<center>";
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -24,7 +40,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {//si el usua
     $edad=$row['edad'];
     $gustos=$row['gustos'];
     $id=$row['id'];
-    echo$id;
     $altura=$row['altura'];
     $peso=$row['peso'];
     $sexo=$row['sexo'];
@@ -34,19 +49,20 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {//si el usua
     <form><tr>
 
       <n><b>GUSTOS(separados por coma):<br></n></b><textarea id='fgustos' name='fgustos' rows='4' cols='50'>$gustos</textarea><br><br>
-      <b><n>EDAD:        <input type='text' id='fedad' name='fedad' value='$edad'>
+      <b><n>EDAD:        <input type='text' id='fedad' name='fedad' value='$edad'><br><br>
       <th><b><n>ALTURA:</th>    <th><input type='text' id='faltura' name='faltura' value=$altura>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
-      <th><b><n>PESO:</th>   <th><input type='text' id='fpeso' name='fpeso' value=$peso></th>
-      <th><b><n>SEXO:</th>   <th><input type='text' id='fsexo' name='fsexo' value=$sexo></th>
+      <th><b><n>PESO:</th>   <th><input type='text' id='fpeso' name='fpeso' value=$peso></th><br><br>
+      <th><b><n>SEXO: </th>   <th><input type='text' id='fsexo' name='fsexo' value=$sexo></th>
 
 
 
       <script type='text/javascript' src='editarElemento.js'></script>
-      <button onclick='confirmar(fgustos,fedad,faltura,fpeso,fsexo,$id)''>Comprobar</button></th>
+      <button onclick='confirmar(fgustos,fedad,faltura,fpeso,fsexo,$id)''>Editar</button></th>
       </form>
 
       <br>______________________________________________________________
-      </tr><br><br>";
+      </tr><br><br>
+      <div>";
     }
 
 
@@ -54,6 +70,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {//si el usua
 }else{
       echo 'No estas loggeado. <a href="registro.html><b><n>Login</a><br><br>';
 }
-echo '</div>';
+echo '</div></center>';
 
 ?>

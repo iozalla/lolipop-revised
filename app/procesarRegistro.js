@@ -41,13 +41,11 @@ function comprobarFecha(fecha){
 
 function comprobarTelefono(telefono){
 
-  alert("telefono: "+!isNaN(telefono.value)&&telefono.value>=111111111&&telefono.value<=999999999)
   return !isNaN(telefono.value)&&telefono.value>=111111111&&telefono.value<=999999999
 
 }
 
 function comprobarNombreApellidos(nombre, apellidos){
-   alert('nombre y apellidos: ' + !/\d/.test(nombre.value) &&  !/\d/.test(apellidos.value)); //se mira si hay un digito ("\d") en el nombre o en al apellido en cuyo caso la comprobacion fallará
    return !/\d/.test(nombre.value) &&  !/\d/.test(apellidos.value)
 }
 

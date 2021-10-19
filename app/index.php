@@ -13,13 +13,13 @@
   <body background="images/fondo.gif">
   <form>
 	<div id="cajita">
-		<center><t> Loli<b><t class="c">pop</t></b></t><br><br>
+		<center><t> Lol<b><t class="c">ipop</t></b></t><br><br>
             	<img src="images/logo.png" alt="Lolipop Logo" style="width:70px;height:70px";><br><br>
           	</center>
 	      <center>
 	      <a href="registro.html"><b><n>Registro</a><br><br>
 	      <a href="login.html"><b><n>Login</a><br><br>
-        <a href="profile.html"><b><n>Perfil</a><br><br>
+        <a href="editProfile.php"><b><n>Perfil</a><br><br>
         <a href="anadirElemento.html"><b><n>A&ntildeadir elemento</a><br><br>
         <a href="verElementos.php"><b><n>Ver y Editar Elementos</a><br><br>
 	      </center>

@@ -33,12 +33,12 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
     echo '
 
     <script>
-      window.location = "index.php";
+      window.location = "verElementos.php";
       alert("success")
     </script>';
 } else {
 
-    print_r($stmt->error);
+    print_r("Datos Incorrectos");
 }
 }
 else{echo '
