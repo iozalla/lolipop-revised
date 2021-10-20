@@ -44,10 +44,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {//si el usua
       echo
       "
       <form method='POST'  action='follow.php?fmail=$mail&follow=False'><tr>
-        <td>{$row['nombre']}</td>
-        <td>{$row['gustos']}</td>
-        <td>{$mail}</td>
-
+        <td>Nombre: {$row['nombre']}</td><br>
+        <td>Gustos: {$row['gustos']}</td><br>
+        <td>Mail:{$mail}</td><br><br><br>
+        _______________________________________
 
         <input type='submit' value='unfollow'>
         </form>
@@ -55,13 +55,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {//si el usua
     }else{
       echo
       "
-      <form method='POST'  action='follow.php?fmail=$mail&follow=True'><tr>
-        <td>{$row['nombre']}</td>
-        <td>{$row['gustos']}</td>
-        <td>{$mail}</td>
+      <form method='POST'  action='follow.php?fmail=$mail&follow=False'><tr>
+        <td>Nombre: {$row['nombre']}</td><br>
+        <td>Gustos: {$row['gustos']}</td><br>
+        <td>Mail:{$mail}</td><br>
+        <input type='submit' value='follow'><br>
+        <center>_______________________________________<br></center>
 
 
-        <input type='submit' value='follow'>
         </form>
         </tr><br><br>";
     }
