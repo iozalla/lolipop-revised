@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+
 <?php
 
 
@@ -37,8 +39,14 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
       alert("success")
     </script>';
 } else {
+    echo '<body style="background-color:#887162;">
+    <br><br><br><br><br><br><br>
+    <div id="cajita">
+<center> <b>Ha habido un error al registrarte. ¿Estas seguro de que no estas registrado ya?<br><br>
+    <a href="registro.html"><b><n>Registro</a><br><br>
+    <a href="login.html"><b><n>Login</a><br><br><div>'
+    ;
 
-    print_r($stmt->error);
 }
 
 ?>

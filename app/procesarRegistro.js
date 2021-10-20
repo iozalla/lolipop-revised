@@ -1,7 +1,7 @@
 
 function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha,sexo){
 
-  if (comprobarDNI(dni)&&
+  if (comprobarDNI(dni)&& contrasena.value!="" &&
   comprobarNombreApellidos(nombre, apellidos)&&
   comprobarMail(mail)&&
   comprobarTelefono(telefono)&&
