@@ -30,7 +30,7 @@
           FECHA NACIMIENTO:<br>  </n></b>   <input type="tel" id="ffechanac" name="ffechanac" placeholder="dd-mm-aaaa"><br><br>
 <table>
 
-
+  </form>
           <tr>
           <td><input type="radio" name="fsexo" value="Hombre"> Hombre<br></td>
           </tr>
@@ -43,9 +43,9 @@
 
 
           <script type="text/javascript" src="procesarRegistro.js"></script>
-        <th>  <button onclick="comprobarDatos(fnombre,fapellidos,fmail,fcontrasena,fdni,ftelefono,ffechanac,fsexo)">Registrarse</button></th>
+        <th>  <button type="button" onclick="return comprobarDatos(fnombre,fapellidos,fmail,fcontrasena,fdni,ftelefono,ffechanac,fsexo)">Registrarse</button></th>
 </table>
 
     </div>
-  </form>
+
 </body>
