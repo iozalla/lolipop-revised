@@ -57,7 +57,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {//si el usua
 
       <script type='text/javascript' src='editarElemento.js'></script>
       <button type='button' onclick='confirmar(fgustos,fedad,faltura,fpeso,fsexo,$id,0)'>Editar</button></th>
-      <button onclick='confirmar(fgustos,fedad,faltura,fpeso,fsexo,$id,1)'>Borrar</button></th>
+      <button type='button' onclick='confirmar(fgustos,fedad,faltura,fpeso,fsexo,$id,1)'>Borrar</button></th>
       </form>
 
       <br>______________________________________________________________

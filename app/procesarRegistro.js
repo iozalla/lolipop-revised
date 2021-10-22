@@ -17,7 +17,7 @@ function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha
     return true;
   }
   else{
-    
+
     location.reload();
   }
 }
@@ -37,7 +37,7 @@ function comprobarFecha(fecha){
       return true
     }
     else{
-    alert("fecha incorrecta")
+    alert("Fecha incorrecta.")
     return false}
 
 }
@@ -63,7 +63,7 @@ function comprobarMail(mail){
       return true
     }
   }
-  alert("mail incorrecto")
+  alert("Mail incorrecto.")
   return false
 
 }
@@ -84,7 +84,7 @@ function comprobarDNI(fdni){
 
             return true;}
     else {
-      alert("letra que deberia ser: "+letrasDNI[myArr[0]%23]);
+      alert("La letra del DNI deberia ser: "+letrasDNI[myArr[0]%23]);
       return false;
     }
   }

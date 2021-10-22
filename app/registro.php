@@ -36,7 +36,7 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
 
     <script>
       window.location = "login.html";
-      alert("success")
+      
     </script>';
 } else {
     echo '<body style="background-color:#887162;">

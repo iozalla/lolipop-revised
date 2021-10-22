@@ -35,7 +35,7 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
     $_SESSION['username'] = $_GET["fmail"];
     echo '<script>
             window.location = "editProfile.php";
-            alert("success")
+            
           </script>';//redireccionar a editarPerfil
     } else {
     echo 'Mail o contrasena incorrecta!';

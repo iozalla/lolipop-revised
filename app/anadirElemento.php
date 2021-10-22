@@ -34,7 +34,7 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
 
     <script>
       window.location = "verElementos.php";
-      alert("success")
+
     </script>';
 } else {
 
@@ -44,7 +44,7 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
 else{echo '
   <script>
     window.location = "login.html";
-    alert("success")
+    
   </script>';
 }
 
