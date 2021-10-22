@@ -1,5 +1,5 @@
-## LOLIPOP
-##### Integrantes del grupo: Asier Astorquiza e Iñigo Ozalla
+# LOLIPOP
+#### Integrantes del grupo: Asier Astorquiza e Iñigo Ozalla
 ##### Instrucciones:
 
 Antes de realizar ninguna acción debemos asegurarnos de que tenemos todos los archivos necesarios para ello. Esto es:
