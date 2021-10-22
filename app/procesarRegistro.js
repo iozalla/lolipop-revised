@@ -1,18 +1,20 @@
 
 function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha,sexo){
 
-  if (comprobarDNI(dni)&&
+  if (comprobarDNI(dni)&& contrasena.value!="" &&
   comprobarNombreApellidos(nombre, apellidos)&&
   comprobarMail(mail)&&
   comprobarTelefono(telefono)&&
   comprobarFecha(fecha)){
 
     web=window.location.href.replace("html","php");
+
     web=`${web}?fmail=${mail.value}&fcontrasena=${contrasena.value}&fnombre=${nombre.value}&fapellidos=${apellidos.value}&fdni=${dni.value}&ftelefono=${telefono.value}&ffechanac=${fecha.value}&fsexo=${sexo.value}`
 
-    window.location = web;
+    window.location.href = web;
 
     alert("registro")
+    return true;
   }
   else{
     alert("datos incorrectos")
@@ -34,7 +36,8 @@ function comprobarFecha(fecha){
 
       return true
     }
-    else{alert("fecha: "+false)
+    else{
+    alert("fecha incorrecta")
     return false}
 
 }

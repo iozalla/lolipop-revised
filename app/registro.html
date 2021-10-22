@@ -4,6 +4,7 @@
   <head>
     <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
       <title>
         Lolipop
       </title>
@@ -17,19 +18,19 @@
             <img src="images/logo.png" alt="Lolipop Logo" style="width:70px;height:70px";><br><br>
           </center>
           <center><table>
-          <th><b><n>E-MAIL:</th><th> <input type="email" id="fmail" name="fmail">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
-          <th><b><n>CONTRASE&NtildeA:</th>  <th><input type="password" id="fcontrasena" name="fcontrasena"></th></center>
+          <th><b><n>E-MAIL:</th><th> <input type="email" id="fmail" name="fmail" placeholder="ejemplo@servidor.extensión">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+          <th><b><n>CONTRASE&NtildeA:</th>  <th><input type="password" id="fcontrasena" name="fcontrasena" placeholder="************"></th></center>
           <tr>
-          <th><b><n>NOMBRE:</th>    <th><input type="text" id="fnombre" name="fnombre">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
-          <th><b><n>APELLIDOS:</th>   <th><input type="text" id="fapellidos" name="fapellidos"></th>
+          <th><b><n>NOMBRE:</th>    <th><input type="text" id="fnombre" name="fnombre" placeholder="Pepe">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+          <th><b><n>APELLIDOS:</th>   <th><input type="text" id="fapellidos" name="fapellidos" placeholder="Rodriguez"></th>
           </table>
           <center>
-          <b><n>DNI:     <br>    <input type="text" id="fdni" name="fdni"><br><br>
-          TELEFONO:  <br>  <input type="tel" id="ftelefono" name="ftelefono"><br><br>
-          FECHA NACIMIENTO:<br>  </n></b>   <input type="tel" id="ffechanac" name="ffechanac"><br><br>
+          <b><n>DNI:     <br>    <input type="text" id="fdni" name="fdni" placeholder="11111111-J"><br><br>
+          TELEFONO:  <br>  <input type="tel" id="ftelefono" name="ftelefono" placeholder="123456789"><br><br>
+          FECHA NACIMIENTO:<br>  </n></b>   <input type="tel" id="ffechanac" name="ffechanac" placeholder="dd-mm-aaaa"><br><br>
 <table>
 
-
+  </form>
           <tr>
           <td><input type="radio" name="fsexo" value="Hombre"> Hombre<br></td>
           </tr>
@@ -42,9 +43,9 @@
 
 
           <script type="text/javascript" src="procesarRegistro.js"></script>
-        <th>  <button onclick="comprobarDatos(fnombre,fapellidos,fmail,fcontrasena,fdni,ftelefono,ffechanac,fsexo)">Registrarse</button></th>
+        <th>  <button type="button" onclick="return comprobarDatos(fnombre,fapellidos,fmail,fcontrasena,fdni,ftelefono,ffechanac,fsexo)">Registrarse</button></th>
 </table>
 
     </div>
-  </form>
+
 </body>

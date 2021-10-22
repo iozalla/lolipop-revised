@@ -96,12 +96,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`mail`, `contrasena`, `nombre`, `apellidos`, `DNI`, `sexo`, `telefono`, `sexualidad`, `fechaNac`, `gustos`, `altura`, `peso`) VALUES
-('chris@gmail.com', 'contrasena', 'Pepe', 'Adolphus', '49933148X', 'Hombre', '666666666', 'homosexual', '11-11-2000', 'Las acrobacias', 190, 80),
 ('iozono11@gmail.com', '$2y$10$SbtZGQ.7bST9XdHqORJiwO4JBI1.T/NqCMlSfTBnuZoI2p4MmL43e', 'Martin', 'ozalla', '79245943-H', 'hombre', '111111111', 'hetero', '11-11-1111', 'Jugar al lol y comer mucho vegetal', 170, 60),
-('jess@hdo.com', 'contrasena', 'Jessica', 'Ammon', '13551093E', 'n', '666666666', 'sexualidad', '11-11-2000', 'Anime', 167, 56),
 ('MARCO@gmail.com', '$2y$10$hKHZEUCL7HwAEj4jSq8Scewbp9Rundru1e6I4yayUM/EfzP5NENgS', 'MARCO', 'POLO', '79245943-H', 'hombre', '777777777', 'hetero', '11-11-1111', 'vender seda, ir de expedicion, jugar al lol.', 170, 60),
-('mattorchard@gmail.es', 'contrasena', 'Matthew', 'Dawon', '61075806L', 'nb', '666666666', 'homosexual', '11-11-2000', 'Pasear', 180, 100),
-('micha@gmail.com', 'contrasena', 'Michael', 'Homar', '38285783Y', 'nb', '666666666', 'bisexual', '11-11-2000', 'Ver peliculas', 155, 55),
 ('test1@gmail.com', '$2y$10$DFRI0DevEPSrA9W.TlIDt.Nk6hBdTfWnY7TQIoMa90/GZRFgen.IS', 'ntestt', 'atestt', '79245943-H', 'Mujer', '777777777', 'hetero?fsexualidad=hetero', '11-11-1111', 'Ir a raves de fiesta', 176, 68);
 
 --
