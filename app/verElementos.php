@@ -47,7 +47,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {//si el usua
     echo
     "<body style='background-color:#887162;'>
     <form><tr>
-
+      <n><b>Estos son tus anuncios, puedes editarlos o borrarlos si lo deseas.</n><b><br><br>
       <n><b>GUSTOS(separados por coma):<br></n></b><textarea id='fgustos' name='fgustos' rows='4' cols='50'>$gustos</textarea><br><br>
       <b><n>EDAD:        <input type='text' id='fedad' name='fedad' value='$edad'><br><br>
       <th><b><n>ALTURA (cm):</th>    <th><input type='text' id='faltura' name='faltura' value=$altura>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
