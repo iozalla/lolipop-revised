@@ -4,7 +4,7 @@
 echo "<div id='cabecera'>
 <center>
   <b><n><a class='active' href='index.php'>Inicio</a>    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <b><n><a href='explore.php'>Explora</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
   <b><n><a href='editProfile.php'>Perfil</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <b><n><a href='anadirElemento.html'>A&ntildeadir Elemento</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <b><n><a href='verElementos.php'>Ver Elemento</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -59,7 +59,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
       <body background='images/fondo.gif'>
         <form>
             <div id='cajita'>
-                <center><t> Loli<b><t class='c'>pop</t></b></t><br><br>
+                <center><t> Lol<t class='c'>ipop</t></b></t><br><br>
                   <img src='images/logo.png' alt='Lolipop Logo' style='width:70px;height:70px';><br><br>
                 <center>
                 <b><n>E-MAIL: '$mail'<br><br>
@@ -88,7 +88,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 <td><input type='radio' name='fsexualidad' value='homo'><n> Homo</n><br></td>
                 </tr>
                 <script type='text/javascript' src='procesarProfile.js'></script>
-              <th>  <button onclick='comprobarDatos(fnombre,fapellidos,fdni,ftelefono,ffechanac,fsexualidad,fgustos,fpeso,faltura)'>ActualizarDatos</button></th>
+              <th>  <button type='button' onclick='comprobarDatos(fnombre,fapellidos,fdni,ftelefono,ffechanac,fsexualidad,fgustos,fpeso,faltura)'>ActualizarDatos</button></th>
       </table>
           </div>
         </form>

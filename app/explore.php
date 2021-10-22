@@ -2,19 +2,9 @@
 
 
 <?php
-echo "<div id='cabecera'>
-<center>
-  <b><n><a class='active' href='index.php'>Inicio</a>    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <b><n><a href='explore.php'>Explora</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <b><n><a href='editProfile.php'>Perfil</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <b><n><a href='anadirElemento.html'>A&ntildeadir Elemento</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <b><n><a href='verElementos.php'>Ver Elemento</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
-
-  </center>
-</div>
+echo "
 <head><link rel='stylesheet' type='text/css' href='style.css'></head>
-<div id='cajita'>
+
 <center>";
 
 error_reporting(E_ALL);
@@ -62,15 +52,17 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {//si el usua
         <td>Nombre: {$row['nombre']}</td><br>
         <td>Gustos: {$row['gustos']}</td><br>
         <td>Mail:{$mail}</td><br><br><br>
-        _______________________________________
 
-        <input type='submit' value='unfollow'>
+
+        <input type='submit' value='unfollow'><br>
+        <center>_______________________________________<br></center>
+
         </form>
         </tr><br><br>";
     }else{
       echo
       "<body style='background-color:#887162;'>
-      <form method='POST'  action='follow.php?fmail=$mail&follow=False'><tr>
+      <form method='POST'  action='follow.php?fmail=$mail&follow=True'><tr>
         <td>Nombre: {$row['nombre']}</td><br>
         <td>Gustos: {$row['gustos']}</td><br>
         <td>Mail:{$mail}</td><br>

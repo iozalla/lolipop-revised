@@ -12,7 +12,7 @@ function comprobarDatos(nombre, apellidos, dni, telefono,fecha,sexualidad,gustos
 
     window.location = web;
 
-    alert("registro")
+  
   }
   else{
     alert("datos incorrectos")

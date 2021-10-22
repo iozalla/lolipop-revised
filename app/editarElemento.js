@@ -1,8 +1,10 @@
-function confirmar(gustos,edad,altura,peso,sexo,id){
+function confirmar(gustos,edad,altura,peso,sexo,id,accion){
+
+  accs=["editarElemento.php","borrarElemento.php"]
   if(confirm("¿Quieres confirmar los cambios?")){
-    web=`editarElemento.php?fid=${id}&fpeso=${peso.value}&fgustos=${gustos.value}&faltura=${altura.value}&fsexo=${sexo.value}&fedad=${edad.value}`
+    web=`${accs[accion]}?fid=${id}&fpeso=${peso.value}&fgustos=${gustos.value}&faltura=${altura.value}&fsexo=${sexo.value}&fedad=${edad.value}`
     window.location = web;
-    alert("aceptado");
+
   }else{
     window.location = "verElementos.php"
 

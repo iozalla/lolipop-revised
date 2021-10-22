@@ -16,17 +16,17 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     $conn = mysqli_connect($hostname,$username,$password,$db);
     if ($conn->connect_error) {die("Database connection failed: " . $conn->connect_error);}
 
-    $sql =  "UPDATE elementos SET gustos=?,peso=?,altura=?,sexo=?,edad=? WHERE id = ? and mail=?;";
+    $sql =  "DELETE from elementos WHERE id = ? and mail=?;";
 
     $stmt= $conn->prepare($sql);//prepara el texto sql para que no haya inyecciones sql
-    $stmt->bind_param("sssssss", $_GET["fgustos"],$_GET["fpeso"],$_GET["faltura"],$_GET["fsexo"],$_GET["fedad"],$_GET["fid"],$_SESSION["username"]);//asigna los parametros
+    $stmt->bind_param("ss", $_GET["fid"],$_SESSION["username"]);//asigna los parametros
 
 
     if ($stmt->execute()) {//ejecuta la instruccion sql
       echo "SUCCESS";
       echo '<script>
               window.location = "verElementos.php";
-              alert("Editado correctamente");
+              alert("borrado correctamente")
             </script>';
 
 

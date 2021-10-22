@@ -13,11 +13,11 @@ function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha
 
     window.location.href = web;
 
-    alert("registro")
+
     return true;
   }
   else{
-    alert("datos incorrectos")
+    
     location.reload();
   }
 }

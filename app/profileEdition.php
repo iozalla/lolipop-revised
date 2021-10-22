@@ -40,6 +40,7 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
 } else {
 
     print_r($stmt->error);
+    print_r("<br><b>Asegurate de haber rellenado todos los datos");
 }
 
 ?>
