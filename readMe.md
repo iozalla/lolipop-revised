@@ -11,9 +11,13 @@ Antes de realizar ninguna acción debemos asegurarnos de que tenemos todos los a
 Una vez tengamos esos archivos podemos comenzar a desplegar el proyecto mediante Docker.
 
 1. Abrimos la terminal en la carpeta donde se han guardado los archivos anteriores.
-2. Ejecutamos el comando '$ sudo docker build -t="web" . '
-3. Seguido ejecutamos el comando '$ sudo docker-compose up '
-4. Una vez este en marcha el contenedor abrimos un navegador (por ejemplo,  Firefox) y nos dirigimos a la dirección 'localhost:8890'. En esta dirección deberemos iniciar sesión como "admin" con la contraseña "test".
-5. Tras iniciar sesión en PHP myAdmin, tendremos que clicar en 'database' para a continuación importar nuestro archivo "database.sql".
-6. Finalmente, nos dirigiremos a la dirección 'localhost:81' y accederemos a nuestra página web.
+2. Ejecutamos los comandos
+ ```
+ $ sudo docker build -t="web" . 
+ $ sudo docker-compose up
+```
+
+3. Una vez este en marcha el contenedor abrimos un navegador (por ejemplo,  Firefox) y nos dirigimos a la dirección 'localhost:8890'. En esta dirección deberemos iniciar sesión como "admin" con la contraseña "test".
+4. Tras iniciar sesión en PHP myAdmin, tendremos que clicar en 'database' para a continuación importar nuestro archivo "database.sql".
+5. Finalmente, nos dirigiremos a la dirección 'localhost:81' y accederemos a nuestra página web.
 
