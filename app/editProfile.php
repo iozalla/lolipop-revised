@@ -8,6 +8,8 @@ echo "<div id='cabecera'>
   <b><n><a href='editProfile.php'>Perfil</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <b><n><a href='anadirElemento.html'>A&ntildeadir Elemento</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <b><n><a href='verElementos.php'>Ver Elemento</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<b><n><a href='cerrarSesion.php'>Cerrar Sesion</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
 
 
   </center>
