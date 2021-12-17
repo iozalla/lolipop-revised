@@ -1,4 +1,19 @@
+<?php session_start();?>
+
 <?php
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+  if(isset($_SESSION['timeout']) ) {
+    $inactive=60;
+    $session_life = time() - $_SESSION['timeout'];
+    echo "$session_life";
+    if($session_life > $inactive)         {
+      echo '<script>window.location = "cerrarSesion.php";</script>';
+    }
+  }
+}
+
+$_SESSION['timeout']=time();
+printf($_session_life);
   echo '<html lang="es">';
 
   echo '<link rel="stylesheet" type="text/css" href="style.css">';
@@ -20,7 +35,7 @@
 	      <a href="registro.html"><b><n>Registro</a><br><br>
 	      <a href="login.html"><b><n>Login</a><br><br>
         <a href="editProfile.php"><b><n>Perfil</a><br><br>
-        <a href="anadirElemento.html"><b><n>A&ntildeadir elemento</a><br><br>
+        <a href="anadirElemento.php"><b><n>A&ntildeadir elemento</a><br><br>
         <a href="verElementos.php"><b><n>Ver y Editar Elementos</a><br><br>
 	      </center>
       </div>

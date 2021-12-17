@@ -6,7 +6,7 @@ echo "<div id='cabecera'>
 <center>
   <b><n><a class='active' href='index.php'>Inicio</a>    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <b><n><a href='editProfile.php'>Perfil</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <b><n><a href='anadirElemento.html'>A&ntildeadir Elemento</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <b><n><a href='anadirElemento.php'>A&ntildeadir Elemento</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <b><n><a href='verElementos.php'>Ver Elemento</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <b><n><a href='cerrarSesion.php'>Cerrar Sesion</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
@@ -21,7 +21,17 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
   // phpinfo();
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {//si el usuario esta registrado puede acceder a la pagina
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+  if(isset($_SESSION['timeout']) ) {
+    $inactive=60;
+    $session_life = time() - $_SESSION['timeout'];
+    echo "$session_life";
+    if($session_life > $inactive) {
+      echo '<script>window.location = "cerrarSesion.php";</script>';
+    }
+  }
+$_SESSION['timeout']=time();
+
   $hostname = "db";
   $username = "admin";
   $password = "test";

@@ -13,7 +13,7 @@ session_start();//para poder acceder a las variables de la sesion
   }
 
 
-
+unset($_SESSION['timeout']);
 
 
 
@@ -35,7 +35,7 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
     $_SESSION['username'] = $_GET["fmail"];
     echo '<script>
             window.location = "editProfile.php";
-            
+
           </script>';//redireccionar a editarPerfil
     } else {
     echo 'Mail o contrasena incorrecta!';
