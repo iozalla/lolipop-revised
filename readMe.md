@@ -13,8 +13,8 @@ Una vez tengamos esos archivos podemos comenzar a desplegar el proyecto mediante
 1. Abrimos la terminal en la carpeta donde se han guardado los archivos anteriores.
 2. Ejecutamos los comandos
  ```
- $ sudo docker build -t="web" . 
- $ sudo docker-compose up
+   sudo docker build -t="web" . 
+   sudo docker-compose up
 ```
 
 3. Una vez este en marcha el contenedor abrimos un navegador (por ejemplo,  Firefox) y nos dirigimos a la dirección 'localhost:8890'. En esta dirección deberemos iniciar sesión como "admin" con la contraseña "test".
