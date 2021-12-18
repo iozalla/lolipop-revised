@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Dec 17, 2021 at 08:33 PM
+-- Generation Time: Dec 18, 2021 at 04:41 PM
 -- Server version: 10.6.5-MariaDB-1:10.6.5+maria~focal
 -- PHP Version: 7.4.20
 
@@ -44,7 +44,9 @@ CREATE TABLE `elementos` (
 INSERT INTO `elementos` (`id`, `gustos`, `edad`, `altura`, `peso`, `sexo`, `mail`) VALUES
 (1, 'Que le guste el gym, los gatos y el manga', 32, 168, 80, 'hombre2', 'MARCO@gmail.com'),
 (2, 'Soy gamer, me gustan las chicas que juegan al LOL', 23, 175, 70, 'Mujer', 'MARCO@gmail.com'),
-(3, 'Que le guste comer y dormir, soy simple', 45, 167, 55, 'Mujer', 'test1@gmail.com');
+(3, 'Que le guste comer y dormir, soy simple', 45, 167, 55, 'Mujer', 'test1@gmail.com'),
+(4, 'sdds', 1221, 121, 2121, 'Hombre', 'test@gmail.com'),
+(5, 'wdasdas', 1212, 212121, 1221, 'Hombre', 'test@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -88,18 +90,19 @@ CREATE TABLE `usuarios` (
   `fechaNac` varchar(50) DEFAULT NULL,
   `gustos` text DEFAULT NULL,
   `altura` int(11) DEFAULT NULL,
-  `peso` int(11) DEFAULT NULL
+  `peso` int(11) DEFAULT NULL,
+  `tarjeta` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`mail`, `contrasena`, `nombre`, `apellidos`, `DNI`, `sexo`, `telefono`, `sexualidad`, `fechaNac`, `gustos`, `altura`, `peso`) VALUES
-('iozono11@gmail.com', '$2y$10$SbtZGQ.7bST9XdHqORJiwO4JBI1.T/NqCMlSfTBnuZoI2p4MmL43e', 'Martin', 'ozalla', '79245943-H', 'hombre', '111111111', 'hetero', '11-11-1111', 'Jugar al lol y comer mucho vegetal', 170, 60),
-('MARCO@gmail.com', '$2y$10$hKHZEUCL7HwAEj4jSq8Scewbp9Rundru1e6I4yayUM/EfzP5NENgS', 'MARCO', 'POLO', '79245943-H', 'hombre', '777777777', 'hetero', '11-11-1111', 'vender seda, ir de expedicion, jugar al lol.', 170, 60),
-('test1@gmail.com', '$2y$10$DFRI0DevEPSrA9W.TlIDt.Nk6hBdTfWnY7TQIoMa90/GZRFgen.IS', 'ntestt', 'atestt', '79245943-H', 'Mujer', '777777777', 'hetero?fsexualidad=hetero', '11-11-1111', 'Ir a raves de fiesta', 176, 68),
-('test@gmail.com', '$2y$10$zMeAx.0WX0wsp24ds8BE7.kkAnDCXzaxXWFANoveWdU0dKJmU8zla', 'qqqq', 'qqqqq', '16102466-M', 'Hombre', '111111111', NULL, '11-11-1111', NULL, NULL, NULL);
+INSERT INTO `usuarios` (`mail`, `contrasena`, `nombre`, `apellidos`, `DNI`, `sexo`, `telefono`, `sexualidad`, `fechaNac`, `gustos`, `altura`, `peso`, `tarjeta`) VALUES
+('iozono11@gmail.com', '$2y$10$SbtZGQ.7bST9XdHqORJiwO4JBI1.T/NqCMlSfTBnuZoI2p4MmL43e', 'Martin', 'ozalla', '79245943-H', 'hombre', '111111111', 'hetero', '11-11-1111', 'Jugar al lol y comer mucho vegetal', 170, 60, NULL),
+('MARCO@gmail.com', '$2y$10$hKHZEUCL7HwAEj4jSq8Scewbp9Rundru1e6I4yayUM/EfzP5NENgS', 'MARCO', 'POLO', '79245943-H', 'hombre', '777777777', 'hetero', '11-11-1111', 'vender seda, ir de expedicion, jugar al lol.', 170, 60, NULL),
+('test0@gmail.com', '$2y$10$dnmbpHcJW3.wfkgavH/mNuCnVV.czPnP7gjuVrZEZVp3ooT8MyzLy', 'aa', 'aaa', '16102466-M', 'Hombre', '111111111', NULL, '11-11-1111', NULL, NULL, NULL, 'N1kxTDU3enlSd2pJMGVaakZqQ3JjRXR6VEFaUGdzUjhyWFc0Q0R4Zmxhaz06OmPTOOn2rZxsl9DEqcEnTV0='),
+('test@gmail.com', '$2y$10$zMeAx.0WX0wsp24ds8BE7.kkAnDCXzaxXWFANoveWdU0dKJmU8zla', 'qqqq', 'qqqqq', '16102466-M', 'Hombre', '111111111', 'hetero', '11-11-1111', 'dsad', 1221, 1221, NULL);
 
 --
 -- Indexes for dumped tables
@@ -125,7 +128,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `elementos`
 --
 ALTER TABLE `elementos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
