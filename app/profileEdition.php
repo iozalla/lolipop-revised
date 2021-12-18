@@ -17,19 +17,21 @@
 
 
  //https://phpdelusions.net/mysqli_examples/insert
-
-
+$clave='KE^A&QgRDxkZJej_b7Uhx^t4=B!Y2%RMZ%=234LcXRdXHBcrv!';
+function encrypt($tarjeta, $clave) {
+ $clave_b64 = base64_decode($clave); //decodificamos en base 64
+ $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-cbc')); #creamos un vector de inicializacion aleatorio
+ $encriptado = openssl_encrypt($data, 'aes-256-cbc', $encryption_key, 0, $iv); #encriptamos la tarjeta
+ return base64_encode($encriptado . '::' . $iv);#devolvemos la tarjeta encriptada y el vector de inicializacion separados por los caraacteres "::"
+}
+$tarjetaEncriptada=encrypt($_GET["fapellidos"], $clave);
+printf($tarjetaEncriptada);
 $sql =  "UPDATE usuarios SET nombre = ?, apellidos= ?,sexualidad=?,DNI=?,telefono=?,fechaNac=?,gustos=?,peso=?,altura=?,tarjeta=? WHERE mail = ?;";
 
 $stmt= $conn->prepare($sql);//prepara el texto sql para que no haya inyecciones sql
-$stmt->bind_param("ssssssssss", $_GET["fnombre"],$_GET["fapellidos"], $_GET["fsexualidad"], $_GET["fdni"], $_GET["ftelefono"], $_GET["ffechanac"], $_GET["fgustos"],$_GET["fpeso"],$_GET["faltura"],$_GET["ftarjeta"],$_SESSION["username"]);//asigna los parametros
-$key='KE^A&QgRDxkZJej_b7Uhx^t4=B!Y2%RMZ%=234LcXRdXHBcrv!'
-function encrypt($data, $key) {
-    $encryption_key = base64_decode($key);
-    $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-cbc'));
-    $encrypted = openssl_encrypt($data, 'aes-256-cbc', $encryption_key, 0, $iv);
-    return base64_encode($encrypted . '::' . $iv);
-}
+$stmt->bind_param("sssssssssss", $_GET["fnombre"],$_GET["fapellidos"], $_GET["fsexualidad"], $_GET["fdni"], $_GET["ftelefono"], $_GET["ffechanac"], $_GET["fgustos"],$_GET["fpeso"],$_GET["faltura"],$tarjetaEncriptada,$_SESSION["username"]);//asigna los parametros
+
+
 
 if ($stmt->execute()) {//ejecuta la instruccion sql
 
@@ -38,10 +40,10 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
     echo '
 
 <script>
-  window.location = "editProfile.php";
+
   alert("datos editados correctamente")
 </script>';
-
+//window.location = "editProfile.php";
 
 } else {
 

@@ -19,7 +19,7 @@ echo '<center>';
 echo '<link rel="stylesheet" type="text/css" href="style.css">';
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
   if(isset($_SESSION['timeout']) ) {
-    $inactive=60;
+    $inactive=600;
     $session_life = time() - $_SESSION['timeout'];
     echo "$session_life";
     if($session_life > $inactive)         {
@@ -60,15 +60,27 @@ printf($_session_life);
         $altura=$info['altura'];
         $tarjeta=$info['tarjeta'];
 
-        $key = 'st6enbaq@NuZXbXj_qr7@4fRme3j$VERcM-c-bJasHmcS98UUP'; //usaremos esta clave para encriptar todos los numeros de tarjetas
+        $clave='KE^A&QgRDxkZJej_b7Uhx^t4=B!Y2%RMZ%=234LcXRdXHBcrv!'; //usaremos esta clave para encriptar todos los numeros de tarjetas
+        $clave = 'qkwjdiw239&&jdafweihbrhnan&^%$ggdnawhd4njshjwuuO';
 
+        function decrypt($tarjetaEncriptada, $clave) {
+            $clave_b64 = base64_decode($clave);#codificamos clave en b64
+            $datos = array_pad(explode('::', base64_decode($tarjetaEncriptada), 2),2,null);#decodificamos la tarjeta encriptada y separamos la tarjeta y el vector de inicializacion
+            list($encrypted_data, $iv)= array_pad(explode('::', base64_decode($tarjetaEncriptada), 2),2,null);
+            //printf($datos[0]);
+            //printf($datos[1]);
+            echo "$tarjetaEncriptada";
+            //printf(openssl_decrypt($datos[0], 'aes-256-cbc', $clave, 0, $datos[1]));
+            echo "(";
+            printf(openssl_decrypt($encrypted_data, 'aes-256-cbc', $clave_b64, 0, $iv  ));
+            echo ")";
+            //print_r(openssl_error_string());
 
+            return openssl_decrypt($encrypted_data, 'aes-256-cbc', $clave_b64, 0, $iv);
 
-        function decrypt($data, $key) {
-            $encryption_key = base64_decode($key);
-            list($encrypted_data, $iv) = array_pad(explode('::', base64_decode($data), 2),2,null);
-            return openssl_decrypt($encrypted_data, 'aes-256-cbc', $encryption_key, 0, $iv);
         }
+        $tarjetaDesencriptada=decrypt($tarjeta,$clave);
+        //printf($tarjeta);
 
         echo "Este es tu perfil " . $nombre . ". Aqui podras consultar tus datos y editarlos si lo deseas.\n";
 
@@ -99,6 +111,7 @@ printf($_session_life);
                 FECHA NACIMIENTO:<br>  </n></b>   <input type='tel' id='ffechanac' name='ffechanac' value='$fecha'><br><br>
                 <th><b><n>PESO(kg):</th>    <th><input type='text' id='fpeso' name='fpeso' value='$peso'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
                 <th><b><n>ALTURA(cm):</th>   <th><input type='text' id='faltura' name='faltura' value='$altura'></th><br><br>
+                Tarjeta:  <br>  <input type='tel' id='ftelefono' name='ftelefono' value='$tarjetaDesencriptada'><br><br>
                 GUSTOS(separados por coma):<br></n></b><textarea id='fgustos' name='fgustos' rows='4' cols='50'>$gustos</textarea><br><br>
                 <table>
                 <tr>
@@ -113,7 +126,7 @@ printf($_session_life);
                 <td><input type='radio' name='fsexualidad' value='homo'><n> Homo</n><br></td>
                 </tr>
                 <script type='text/javascript' src='procesarProfile.js'></script>
-              <th>  <button type='button' onclick='comprobarDatos(fnombre,fapellidos,fdni,ftelefono,ffechanac,fsexualidad,fgustos,fpeso,faltura)'>ActualizarDatos</button></th>
+              <th>  <button type='button' onclick='comprobarDatos(fnombre,fapellidos,fdni,ftelefono,ffechanac,fsexualidad,fgustos,fpeso,faltura,ftarjeta)'>ActualizarDatos</button></th>
       </table>
           </div>
         </form>

@@ -1,9 +1,9 @@
 
-function comprobarDatos(nombre, apellidos, dni, telefono,fecha,sexualidad,gustos,peso,altura){
+function comprobarDatos(nombre, apellidos, dni, telefono,fecha,sexualidad,gustos,peso,altura,tarjeta){
 
   if (comprobarDNI(dni)&&
   comprobarNombreApellidos(nombre, apellidos)&&
-
+  comprobarTarjeta(tarjeta)&&
   comprobarTelefono(telefono)&&
   comprobarFecha(fecha)){
 
@@ -12,7 +12,7 @@ function comprobarDatos(nombre, apellidos, dni, telefono,fecha,sexualidad,gustos
 
     window.location = web;
 
-  
+
   }
   else{
     alert("datos incorrectos")
@@ -37,6 +37,11 @@ function comprobarFecha(fecha){
     else{alert("Tienes que ser mayor de edad y el formato de fecha es el siguiente dd-mm-aaaa")
     return false}
 
+}
+function comprobarTarjeta(tarjeta){
+
+  return !isNaN(tarjeta.value)&&tarjeta.value.toString().length==20&&/\d/.test(tarjeta.value)
+  //se mira si tiene 20 chars y si solo tiene digitos
 }
 
 function comprobarTelefono(telefono){
