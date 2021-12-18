@@ -6,6 +6,11 @@ session_start();//para poder acceder a las variables de la sesion
   $username = "admin";
   $password = "test";
   $db = "database";
+  $DateAndTime = date('m-d-Y h:i:s a', time());
+  $file = 'logs.txt';
+  $email = $_GET["fmail"];
+  $loginfo = "$email  $DateAndTime \n";
+  file_put_contents($file, $loginfo , FILE_APPEND | LOCK_EX);
 
   $conn = mysqli_connect($hostname,$username,$password,$db);
   if ($conn->connect_error) {
@@ -14,9 +19,6 @@ session_start();//para poder acceder a las variables de la sesion
 
 
 unset($_SESSION['timeout']);
-
-
-
 
 
 $sql = "SELECT contrasena FROM `usuarios` WHERE mail=?; ";
@@ -50,6 +52,7 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
             location.reload();
           </script>';//recargar la pagina
 }
+
 
 
 
