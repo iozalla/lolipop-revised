@@ -58,6 +58,18 @@ printf($_session_life);
         $sexo=$info['sexo'];
         $peso=$info['peso'];
         $altura=$info['altura'];
+        $tarjeta=$info['tarjeta'];
+
+        $key = 'st6enbaq@NuZXbXj_qr7@4fRme3j$VERcM-c-bJasHmcS98UUP'; //usaremos esta clave para encriptar todos los numeros de tarjetas
+
+
+
+        function decrypt($data, $key) {
+            $encryption_key = base64_decode($key);
+            list($encrypted_data, $iv) = array_pad(explode('::', base64_decode($data), 2),2,null);
+            return openssl_decrypt($encrypted_data, 'aes-256-cbc', $encryption_key, 0, $iv);
+        }
+
         echo "Este es tu perfil " . $nombre . ". Aqui podras consultar tus datos y editarlos si lo deseas.\n";
 
         echo "

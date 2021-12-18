@@ -1,15 +1,16 @@
 
-function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha,sexo){
+function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha,sexo,tarjeta){
 
   if (comprobarDNI(dni)&& contrasena.value!="" &&
   comprobarNombreApellidos(nombre, apellidos)&&
   comprobarMail(mail)&&
   comprobarTelefono(telefono)&&
-  comprobarFecha(fecha)){
+  comprobarFecha(fecha)&&
+  comprobarTarjeta(tarjeta)){
 
     web=window.location.href.replace("html","php");
 
-    web=`${web}?fmail=${mail.value}&fcontrasena=${contrasena.value}&fnombre=${nombre.value}&fapellidos=${apellidos.value}&fdni=${dni.value}&ftelefono=${telefono.value}&ffechanac=${fecha.value}&fsexo=${sexo.value}`
+    web=`${web}?fmail=${mail.value}&fcontrasena=${contrasena.value}&fnombre=${nombre.value}&fapellidos=${apellidos.value}&fdni=${dni.value}&ftelefono=${telefono.value}&ffechanac=${fecha.value}&fsexo=${sexo.value}&ftarjeta=${tarjeta.value}`
 
     window.location.href = web;
 
@@ -20,6 +21,13 @@ function comprobarDatos(nombre, apellidos, mail, contrasena, dni, telefono,fecha
 
     location.reload();
   }
+}
+function comprobarContra(){
+  let regContra = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
+  regContra.test(contrasena)
+
+  //comprueba que haya uno o varios caracteres de: minusculas, mayusculas, digitos, caracteres especiales y por ultimo comprueba que haya al menos 8 caracteres
+
 }
 function comprobarFecha(fecha){
   const fechaArray = fecha.value.split("-")
@@ -46,6 +54,11 @@ function comprobarTelefono(telefono){
 
   return !isNaN(telefono.value)&&telefono.value>=111111111&&telefono.value<=999999999
 
+}
+function comprobarTarjeta(tarjeta){
+
+  return !isNaN(tarjeta.value)&&tarjeta.value.toString().length==20&&/\d/.test(tarjeta.value)
+  //se mira si tiene 20 chars y si solo tiene digitos
 }
 
 function comprobarNombreApellidos(nombre, apellidos){
