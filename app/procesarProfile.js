@@ -8,7 +8,7 @@ function comprobarDatos(nombre, apellidos, dni, telefono,fecha,sexualidad,gustos
   comprobarFecha(fecha)){
 
     web=window.location.href.replace("editProfile.php","profileEdition.php");
-    web=`${web}?fsexualidad=${sexualidad.value}&fnombre=${nombre.value}&fapellidos=${apellidos.value}&fdni=${dni.value}&ftelefono=${telefono.value}&ffechanac=${fecha.value}&fgustos=${gustos.value}&fpeso=${peso.value}&faltura=${altura.value}`
+    web=`${web}?fsexualidad=${sexualidad.value}&fnombre=${nombre.value}&fapellidos=${apellidos.value}&fdni=${dni.value}&ftelefono=${telefono.value}&ffechanac=${fecha.value}&fgustos=${gustos.value}&fpeso=${peso.value}&faltura=${altura.value}&ftarjeta=${tarjeta.value}`
 
     window.location = web;
 

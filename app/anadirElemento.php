@@ -12,7 +12,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
   }
 
   $_SESSION['timeout']=time();
-  printf($_session_life);
+  //printf($_session_life);
   echo '
   <html lang="es">
   <head>

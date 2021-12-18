@@ -60,7 +60,7 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
 
     echo ' rows updated properly!';
 
-    //echo '<script>window.location = "login.html";</script>';
+    echo '<script>window.location = "login.html";</script>';
 } else {
   print_r($stmt->error);
     echo '<body style="background-color:#887162;">

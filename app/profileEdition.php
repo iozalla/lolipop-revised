@@ -18,14 +18,15 @@
 
  //https://phpdelusions.net/mysqli_examples/insert
 $clave='KE^A&QgRDxkZJej_b7Uhx^t4=B!Y2%RMZ%=234LcXRdXHBcrv!';
+$clave = 'qkwjdiw239&&jdafweihbrhnan&^%$ggdnawhd4njshjwuuO'; //usaremos esta clave para encriptar y desencriptar todos los numeros de tarjetas
 function encrypt($tarjeta, $clave) {
  $clave_b64 = base64_decode($clave); //decodificamos en base 64
  $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-cbc')); #creamos un vector de inicializacion aleatorio
- $encriptado = openssl_encrypt($data, 'aes-256-cbc', $encryption_key, 0, $iv); #encriptamos la tarjeta
+ $encriptado = openssl_encrypt($tarjeta, 'aes-256-cbc', $clave_b64, 0, $iv); #encriptamos la tarjeta
  return base64_encode($encriptado . '::' . $iv);#devolvemos la tarjeta encriptada y el vector de inicializacion separados por los caraacteres "::"
 }
-$tarjetaEncriptada=encrypt($_GET["fapellidos"], $clave);
-printf($tarjetaEncriptada);
+$tarjetaEncriptada=encrypt($_GET["ftarjeta"], $clave);
+#printf($tarjetaEncriptada);
 $sql =  "UPDATE usuarios SET nombre = ?, apellidos= ?,sexualidad=?,DNI=?,telefono=?,fechaNac=?,gustos=?,peso=?,altura=?,tarjeta=? WHERE mail = ?;";
 
 $stmt= $conn->prepare($sql);//prepara el texto sql para que no haya inyecciones sql
@@ -42,8 +43,9 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
 <script>
 
   alert("datos editados correctamente")
+  window.location = "editProfile.php";
 </script>';
-//window.location = "editProfile.php";
+
 
 } else {
 
