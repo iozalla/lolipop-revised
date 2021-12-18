@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Dec 18, 2021 at 05:34 PM
+-- Generation Time: Dec 18, 2021 at 04:41 PM
 -- Server version: 10.6.5-MariaDB-1:10.6.5+maria~focal
 -- PHP Version: 7.4.20
 
@@ -101,8 +101,7 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`mail`, `contrasena`, `nombre`, `apellidos`, `DNI`, `sexo`, `telefono`, `sexualidad`, `fechaNac`, `gustos`, `altura`, `peso`, `tarjeta`) VALUES
 ('iozono11@gmail.com', '$2y$10$SbtZGQ.7bST9XdHqORJiwO4JBI1.T/NqCMlSfTBnuZoI2p4MmL43e', 'Martin', 'ozalla', '79245943-H', 'hombre', '111111111', 'hetero', '11-11-1111', 'Jugar al lol y comer mucho vegetal', 170, 60, NULL),
 ('MARCO@gmail.com', '$2y$10$hKHZEUCL7HwAEj4jSq8Scewbp9Rundru1e6I4yayUM/EfzP5NENgS', 'MARCO', 'POLO', '79245943-H', 'hombre', '777777777', 'hetero', '11-11-1111', 'vender seda, ir de expedicion, jugar al lol.', 170, 60, NULL),
-('test01@gmail.com', '$2y$10$bCgaCBmSg7yMmnLpE5ImBeS/Q0zSxNTrIGstF3wkpvO9nr2AQXXfm', 'asas', 'asssa', '16102466-M', 'Hombre', '111111111', NULL, '11-11-1111', NULL, NULL, NULL, 'OW1vRE5oaEoxWGlzWHFCRGI0cW5TakxrZnZiRWkzdnpLejdmeGlkamh4VT06Osb759in4gcXGN8gDxSnMJo='),
-('test0@gmail.com', '$2y$10$dnmbpHcJW3.wfkgavH/mNuCnVV.czPnP7gjuVrZEZVp3ooT8MyzLy', 'aa', 'aaa', '16102466-M', 'Hombre', '111111111', 'hetero', '11-11-1111', 'qqwdas', 1212, 1221, 'ZnBGbktnaTRvRTFNelN4RFlDaWxmV1NYeHVvY09NWCt6ZUhSN2ZtN0M4Yz06Ov5l1f/ACnyv1Za08mxeIXA='),
+('test0@gmail.com', '$2y$10$dnmbpHcJW3.wfkgavH/mNuCnVV.czPnP7gjuVrZEZVp3ooT8MyzLy', 'aa', 'aaa', '16102466-M', 'Hombre', '111111111', NULL, '11-11-1111', NULL, NULL, NULL, 'N1kxTDU3enlSd2pJMGVaakZqQ3JjRXR6VEFaUGdzUjhyWFc0Q0R4Zmxhaz06OmPTOOn2rZxsl9DEqcEnTV0='),
 ('test@gmail.com', '$2y$10$zMeAx.0WX0wsp24ds8BE7.kkAnDCXzaxXWFANoveWdU0dKJmU8zla', 'qqqq', 'qqqqq', '16102466-M', 'Hombre', '111111111', 'hetero', '11-11-1111', 'dsad', 1221, 1221, NULL);
 
 --
