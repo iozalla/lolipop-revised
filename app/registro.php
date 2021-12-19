@@ -46,13 +46,19 @@
   $tarjetaDesencriptada=decrypt($tarjetaEncriptada,$clave);
 
    //https://phpdelusions.net/mysqli_examples/insert
-
+    $fsexo=htmlspecialchars($_GET["fsexo"]);
+     $fnombre=htmlspecialchars($_GET["fnombre"]);
+     $fapellidos=htmlspecialchars($_GET["fapellidos"]);
+     $femail=htmlspecialchars($_GET["femail"]);
+     $fdni=htmlspecialchars($_GET["fdni"]);
+     $ftelefono=htmlspecialchars($_GET["ftelefono"]);
+     $ffechanac=htmlspecialchars($_GET["ffechanac"]);
 
   $contrasenaHasheada=password_hash($_GET["fcontrasena"],PASSWORD_DEFAULT); //esto se usa para hashear la contraseña https://www.php.net/manual/en/function.password-hash.php
 $sql = "INSERT INTO usuarios (nombre, apellidos, mail, contrasena, DNI, telefono,fechaNac,sexo,tarjeta) VALUES (?,?,?,?,?,?,?,?,?); ";
 
 $stmt= $conn->prepare($sql);//prepara el texto sql para que no haya inyecciones sql
-$stmt->bind_param("sssssssss", $_GET["fnombre"],$_GET["fapellidos"], $_GET["fmail"], $contrasenaHasheada, $_GET["fdni"], $_GET["ftelefono"], $_GET["ffechanac"], $_GET["fsexo"],$tarjetaEncriptada);//asigna los parametros
+$stmt->bind_param("sssssssss", $fnombre ,$fapellidos, $fmail, $contrasenaHasheada, $fdni, $ftelefono, $ffechanac, $fsexo ,$tarjetaEncriptada);//asigna los parametros
 
 
 if ($stmt->execute()) {//ejecuta la instruccion sql
