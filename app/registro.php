@@ -49,7 +49,7 @@
     $fsexo=htmlspecialchars($_GET["fsexo"]);
      $fnombre=htmlspecialchars($_GET["fnombre"]);
      $fapellidos=htmlspecialchars($_GET["fapellidos"]);
-     $femail=htmlspecialchars($_GET["femail"]);
+     $fmail=htmlspecialchars($_GET["fmail"]);
      $fdni=htmlspecialchars($_GET["fdni"]);
      $ftelefono=htmlspecialchars($_GET["ftelefono"]);
      $ffechanac=htmlspecialchars($_GET["ffechanac"]);

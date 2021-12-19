@@ -7,7 +7,16 @@ echo '<div id="cajita">';
 echo '<center>';
 echo '<link rel="stylesheet" type="text/css" href="style.css">';
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+  if(isset($_SESSION['timeout']) ) {
+    $inactive=60;
+    $session_life = time() - $_SESSION['timeout'];
+    //echo "$session_life";
+    if($session_life > $inactive)         {
+      echo '<script>window.location = "cerrarSesion.php";</script>';
+    }
+  }
 
+$_SESSION['timeout']=time();
     $hostname = "db";
     $username = "admin";
     $password = "test";
@@ -15,11 +24,16 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
     $conn = mysqli_connect($hostname,$username,$password,$db);
     if ($conn->connect_error) {die("Database connection failed: " . $conn->connect_error);}
+    $fgustos=htmlspecialchars($_GET["fgustos"]); //Sanitizamos el input del usuario para evitar ataques XSS alamcenados
+    $fsexo=htmlspecialchars($_GET["fsexo"]); //Sanitizamos el input del usuario para evitar ataques XSS alamcenados
+    $faltura=htmlspecialchars($_GET["faltura"]);
+    $fpeso=htmlspecialchars($_GET["fpeso"]);
+    $fedad=htmlspecialchars($_GET["fedad"]);
 
     $sql =  "UPDATE elementos SET gustos=?,peso=?,altura=?,sexo=?,edad=? WHERE id = ? and mail=?;";
 
     $stmt= $conn->prepare($sql);//prepara el texto sql para que no haya inyecciones sql
-    $stmt->bind_param("sssssss", $_GET["fgustos"],$_GET["fpeso"],$_GET["faltura"],$_GET["fsexo"],$_GET["fedad"],$_GET["fid"],$_SESSION["username"]);//asigna los parametros
+    $stmt->bind_param("sssssss", $fgustos,$fpeso,$faltura,$fsexo,$fedad,$_GET["fid"],$_SESSION["username"]);//asigna los parametros
 
 
     if ($stmt->execute()) {//ejecuta la instruccion sql

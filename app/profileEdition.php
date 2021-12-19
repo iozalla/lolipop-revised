@@ -2,6 +2,17 @@
   session_start();
   error_reporting(E_ALL);
   ini_set('display_errors', 1);
+  if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    if(isset($_SESSION['timeout']) ) {
+      $inactive=60;
+      $session_life = time() - $_SESSION['timeout'];
+      //echo "$session_life";
+      if($session_life > $inactive)         {
+        echo '<script>window.location = "cerrarSesion.php";</script>';
+      }
+    }
+
+  $_SESSION['timeout']=time();
   $hostname = "db";
   $username = "admin";
   $password = "test";
@@ -34,6 +45,7 @@ $fapellidos=htmlspecialchars($_GET["fapellidos"]);
 $fsexualidad=htmlspecialchars($_GET["fsexualidad"]);
 $fdni=htmlspecialchars($_GET["fdni"]);
 $ftelefono=htmlspecialchars($_GET["ftelefono"]);
+$ffechanac=htmlspecialchars($_GET["ffechanac"]);
 //$ffechanac=htmlspecialchars($_GET["ffechanac"]);
 $sql = "UPDATE usuarios SET nombre = ?, apellidos =?, sexualidad = ?, DNI = ?, telefono = ?, fechaNac=?, gustos =?,peso=?, altura=?, tarjeta=? WHERE mail=?;";
 
@@ -61,5 +73,5 @@ if ($stmt->execute()) {//ejecuta la instruccion sql
     print_r($stmt->error);
     print_r("<br><b>Asegurate de haber rellenado todos los datos");
 }
-
+}
 ?>

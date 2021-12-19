@@ -19,7 +19,7 @@ echo '<center>';
 echo '<link rel="stylesheet" type="text/css" href="style.css">';
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
   if(isset($_SESSION['timeout']) ) {
-    $inactive=600;
+    $inactive=60;
     $session_life = time() - $_SESSION['timeout'];
     //echo "$session_life";
     if($session_life > $inactive)         {
