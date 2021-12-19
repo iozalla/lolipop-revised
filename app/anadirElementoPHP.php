@@ -1,14 +1,17 @@
 <?php session_start();
-$inactive = 12;
-$session_life = time() - $_session['timeout'];
-if($session_life > $inactive) {
-   header("Location: cerrarSesion.php");
-}
-$_session['timeout']=time();
-?>
-<?php
+
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+  if(isset($_SESSION['timeout']) ) {
+    $inactive=600;
+    $session_life = time() - $_SESSION['timeout'];
+    echo "$session_life";
+    if($session_life > $inactive)         {
+      echo '<script>window.location = "cerrarSesion.php";</script>';
+    }
+  }
+
+  $_SESSION['timeout']=time();
   $hostname = "db";
   $username = "admin";
   $password = "test";
