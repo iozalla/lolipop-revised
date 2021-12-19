@@ -26,10 +26,21 @@ function encrypt($tarjeta, $clave) {
  return base64_encode($encriptado . '::' . $iv);#devolvemos la tarjeta encriptada y el vector de inicializacion separados por los caraacteres "::"
 }
 $tarjetaEncriptada=encrypt($_GET["ftarjeta"], $clave);
-sql =  "UPDATE usuarios SET nombre = ?, apellidos= ?,sexualidad=?,DNI=?,telefono=?,fechaNac=?,gustos=?,peso=?,altura=?,tarjeta=? WHERE mail = ?;";
-$gustos=htmlspecialchars($_GET["fgustos"]); //Sanitizamos el input del usuario para evitar ataques XSS alamcenados
+#printf($tarjetaEncriptada);
+$tarjetaEncriptada=encrypt($_GET["ftarjeta"], $clave);
+$fgustos=htmlspecialchars($_GET["fgustos"]); //Sanitizamos el input del usuario para evitar ataques XSS alamcenados
+$fnombre=htmlspecialchars($_GET["fnombre"]);
+$fapellidos=htmlspecialchars($_GET["fapellidos"]);
+$fsexualidad=htmlspecialchars($_GET["fsexualidad"]);
+$fdni=htmlspecialchars($_GET["fdni"]);
+$ftelefono=htmlspecialchars($_GET["ftelefono"]);
+//$ffechanac=htmlspecialchars($_GET["ffechanac"]);
+$sql = "UPDATE usuarios SET nombre = ?, apellidos =?, sexualidad = ?, DNI = ?, telefono = ?, fechaNac=?, gustos =?,peso=?, altura=?, tarjeta=? WHERE mail=?;";
+
+
 $stmt= $conn->prepare($sql);//prepara el texto sql para que no haya inyecciones sql
-$stmt->bind_param("sssssssssss", $_GET["fnombre"],$_GET["fapellidos"], $_GET["fsexualidad"], $_GET["fdni"], $_GET["ftelefono"], $_GET["ffechanac"], $gustos ,$_GET["fpeso"],$_GET["faltura"],$tarjetaEncriptada,$_SESSION["username"]);//asigna los parametros
+$stmt->bind_param("sssssssssss", $fnombre,$fapellidos, $fsexualidad, $fdni, $ftelefono, $ffechanac, $fgustos,$_GET["fpeso"],$_GET["faltura"],$tarjetaEncriptada,$_SESSION["username"]);//asigna los parametros
+
 
 
 if ($stmt->execute()) {//ejecuta la instruccion sql
