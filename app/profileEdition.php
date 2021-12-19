@@ -27,7 +27,7 @@ function encrypt($tarjeta, $clave) {
 }
 $tarjetaEncriptada=encrypt($_GET["ftarjeta"], $clave);
 sql =  "UPDATE usuarios SET nombre = ?, apellidos= ?,sexualidad=?,DNI=?,telefono=?,fechaNac=?,gustos=?,peso=?,altura=?,tarjeta=? WHERE mail = ?;";
-
+$gustos=htmlspecialchars($_GET["fgustos"]); //Sanitizamos el input del usuario para evitar ataques XSS alamcenados
 $stmt= $conn->prepare($sql);//prepara el texto sql para que no haya inyecciones sql
 $stmt->bind_param("sssssssssss", $_GET["fnombre"],$_GET["fapellidos"], $_GET["fsexualidad"], $_GET["fdni"], $_GET["ftelefono"], $_GET["ffechanac"], $gustos ,$_GET["fpeso"],$_GET["faltura"],$tarjetaEncriptada,$_SESSION["username"]);//asigna los parametros
 
