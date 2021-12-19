@@ -45,10 +45,10 @@
   }
   $tarjetaDesencriptada=decrypt($tarjetaEncriptada,$clave);
 
- //https://phpdelusions.net/mysqli_examples/insert
+   //https://phpdelusions.net/mysqli_examples/insert
 
 
-$contrasenaHasheada=password_hash($_GET["fcontrasena"],PASSWORD_DEFAULT); //esto se usa para hashear la contraseña https://www.php.net/manual/en/function.password-hash.php
+  $contrasenaHasheada=password_hash($_GET["fcontrasena"],PASSWORD_DEFAULT); //esto se usa para hashear la contraseña https://www.php.net/manual/en/function.password-hash.php
 $sql = "INSERT INTO usuarios (nombre, apellidos, mail, contrasena, DNI, telefono,fechaNac,sexo,tarjeta) VALUES (?,?,?,?,?,?,?,?,?); ";
 
 $stmt= $conn->prepare($sql);//prepara el texto sql para que no haya inyecciones sql
