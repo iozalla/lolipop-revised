@@ -3,7 +3,7 @@
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
   if(isset($_SESSION['timeout']) ) {
-    $inactive=600;
+    $inactive=60;
     $session_life = time() - $_SESSION['timeout'];
     echo "$session_life";
     if($session_life > $inactive)         {
@@ -29,11 +29,13 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
  //https://phpdelusions.net/mysqli_examples/insert
 
 
-$sql = "INSERT INTO elementos (mail,gustos, edad, altura, peso, sexo) VALUES (?,?,?,?,?,?); ";
+ $fgustos=htmlspecialchars($_GET["fgustos"]); //Sanitizamos el input del usuario para evitar ataques XSS alamcenados
+ $fsexo=htmlspecialchars($_GET["fsexo"]); //Sanitizamos el input del usuario para evitar ataques XSS alamcenados
+ $sql = "INSERT INTO elementos (mail,gustos, edad, altura, peso, sexo) VALUES (?,?,?,?,?,?); ";
 
-$stmt= $conn->prepare($sql);//prepara el texto sql para que no haya inyecciones sql
-$stmt->bind_param("ssssss",$_SESSION['username'], $_GET["fgustos"],$_GET["fedad"], $_GET["faltura"], $_GET["fpeso"], $_GET["fsexo"]);//asigna los parametros
-
+ $stmt= $conn->prepare($sql);//prepara el texto sql para que no haya i  nyecciones sql
+ $stmt->bind_param("ssssss",$_SESSION['username'], $fgustos ,$_GET["fedad"], $_GET["faltura"], $_GET["fpeso"], $fsexo);//asigna los parametros
+ $gustos=htmlspecialchars($_GET["fgustos"]);
 
 if ($stmt->execute()) {//ejecuta la instruccion sql
 

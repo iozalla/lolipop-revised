@@ -21,16 +21,17 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
   // phpinfo();
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-  if(isset($_SESSION['timeout']) ) {
-    $inactive=60;
-    $session_life = time() - $_SESSION['timeout'];
-    echo "$session_life";
-    if($session_life > $inactive) {
-      echo '<script>window.location = "cerrarSesion.php";</script>';
+  if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    if(isset($_SESSION['timeout']) ) {
+      $inactive=60;
+      $session_life = time() - $_SESSION['timeout'];
+      //echo "$session_life";
+      if($session_life > $inactive)         {
+        echo '<script>window.location = "cerrarSesion.php";</script>';
+      }
     }
-  }
-$_SESSION['timeout']=time();
+
+  $_SESSION['timeout']=time();
 
   $hostname = "db";
   $username = "admin";
